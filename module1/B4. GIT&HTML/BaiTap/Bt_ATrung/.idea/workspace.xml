@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98deef06-4be2-436a-91c8-219e1aa95b9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaoTrangCvCaNhan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TaoTrangCvCaNhan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaoTrangCvCaNhan/TaoTrangCvCaNhan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../TaoTrangCvCaNhan/TaoTrangCvCaNhan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TaoTrangCvCaNhan/TaoTrangCvCaNhan.html" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -42,11 +44,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594646904322</updated>
-      <workItem from="1594646905453" duration="1636000" />
+      <workItem from="1594646905453" duration="3676000" />
+      <workItem from="1594699067018" duration="4486000" />
+      <workItem from="1594728403827" duration="436000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="568" y="180" key="FileChooserDialogImpl" timestamp="1594648908588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="568" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594648908588" />
   </component>
 </project>
