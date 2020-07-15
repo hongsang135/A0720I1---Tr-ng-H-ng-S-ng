@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao Form Don Gian</title>
+    <style>
+    .style_form{
+            background-color: white;
+        }
+    .style_title{
+        background-color: darkorange;
+        color: white;
+        text-align: center;
+    }
+    .right{
+        text-align: right;
+        color: blue;
+        }
+    .checkbox{
+        color: darkorange;
+    }
+    .so_thich{
+        color: blue;
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+<form method="get" action="form1.html" class="style_form">
+    <table>
+        <tr class="style_title" >
+            <td colspan="4">SỞ THÍCH CỦA BẠN</td>
+        </tr>
+        <tr>
+            <td class="right">Họ và tên</td>
+            <td colspan="3"><input type="text" name="hovaten"></td>
+        </tr>
+        <tr>
+            <td class="right">Email</td>
+            <td colspan="3"><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td class="so_thich">Sở thích</td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Thể Thao
+            </td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Âm nhạc
+            </td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Đọc sách
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Lướt web
+            </td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Chơi game
+            </td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Điện ảnh
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="checkbox">
+                <input type="checkbox" name="sothich">Du lịch
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3"><input type="submit" name="GuiThongTin" value="Gửi thông tin">
+                <input type="reset" name="reset" value="Nhập lại">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
