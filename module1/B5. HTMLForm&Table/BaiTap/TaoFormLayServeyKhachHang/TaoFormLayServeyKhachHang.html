@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Lay Servey Khach Hang</title>
+    <style>
+        select{
+            width: 50%;
+        }
+        label{
+            font-weight: bold;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="TaoFormLayServeyKhachHang.html" method="get">
+    <h3>Market Research Survey</h3>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    <label>What is your age range?</label><br>
+    <select name="age">
+        <option value="18-24">18-24</option>
+        <option value="25-34">25-34</option>
+        <option value="35-50">35-50</option>
+        <option value="50+">50+</option>
+    </select>
+    <br><br>
+    <label>What is your yearly income range?</label><br>
+    <select name="incom">
+        <option value="$0-$25000">$0-$25000</option>
+        <option value="$25001-$50000">$25001-$50000</option>
+        <option value="$50001-$100000">$50001-$100000</option>
+        <option value="$100000+">$100000+</option>
+    </select>
+    <br><br>
+    <label>Gender Identity</label><br>
+    <input type="radio" name="gender" value="male">Male<br>
+    <input type="radio" name="gender" value="male">Female<br>
+    <input type="radio" name="gender" value="Nonbinary">Nonbinary<br>
+    <input type="radio" name="gender" value="other">Other<br>
+        <input type="text" name="gender">
+    <br><br>
+    <label>Which of the following products have your purchased in the last 2 months. Please check all that apply.</label><br>
+    <input type="checkbox" name="products_purchased" value="product1">product 1<br>
+    <input type="checkbox" name="products_purchased" value="product2">product 2<br>
+    <input type="checkbox" name="products_purchased" value="product3">product 3<br>
+    <br>
+    <label>How often would you use our new product?</label><br>
+    <input type="radio" name="how_often" value="daily">Daily<br>
+    <input type="radio" name="how_often" value="Weekly">Weekly<br>
+    <input type="radio" name="how_often" value="Monthly">Monthly<br>
+    <label>What would you pay for the new product?</label><br>
+    <span>$</span>
+    <span>
+        <input type="number" name="PayForNewProduct"><br>
+        <label>dollars</label>
+    </span>
+    <br>
+    <label>What features would you like to see in the new product</label><br>
+    <textarea cols="80" rows="7" name="features_new"></textarea><br>
+    <label>please rate your leavel of agreement with the following statements.</label><br>
+    <table border="1">
+        <tr>
+            <td></td>
+            <th>strongly desagree</th>
+            <th>desagree</th>
+            <th>agree</th>
+            <th>strongly agree</th>
+        </tr>
+        <tr>
+            <th>our products are priced fairly</th>
+            <td><input type="radio" name="priced_fairly" value="strongly desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="agree"></td>
+            <td><input type="radio" name="priced_fairly" value="strongly agree"></td>
+        </tr>
+        <tr>
+            <th>our products are priced fairly</th>
+            <td><input type="radio" name="priced_fairly" value="strongly desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="agree"></td>
+            <td><input type="radio" name="priced_fairly" value="strongly agree"></td>
+        </tr>
+        <tr>
+            <th>our products are priced fairly</th>
+            <td><input type="radio" name="priced_fairly" value="strongly desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="desagree"></td>
+            <td><input type="radio" name="priced_fairly" value="agree"></td>
+            <td><input type="radio" name="priced_fairly" value="strongly agree"></td>
+        </tr>
+    </table>
+    <input type="submit" name="submit" value="submit">
+</form>
+</body>
+</html>
