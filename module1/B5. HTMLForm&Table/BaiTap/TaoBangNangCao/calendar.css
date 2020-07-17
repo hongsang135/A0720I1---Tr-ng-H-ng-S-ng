@@ -1,0 +1,36 @@
+h2{
+    color: blue;
+    text-align: center;
+}
+table{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: none;
+}
+.daysun{
+    background-color: red;
+}
+.daysat{
+    background-color: blue;}
+th{
+    color: white;
+    background-color: darkorange;
+}
+table td:nth-child(1){
+    color: red;
+}
+table td:nth-child(7){
+    color: blue;
+}
+sub{
+    color: black;
+}
+table tr:nth-child(n+3) td {
+    border:1px solid black;
+    font-size: 24px;
+}
+table tr:nth-child(1) td {
+    border: 1000px solid black;
+}

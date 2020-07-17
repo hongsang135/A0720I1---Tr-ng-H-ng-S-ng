@@ -13,6 +13,12 @@
         td{
             text-align: center;
         }
+        hr{
+            border: dotted;
+        }
+        .table{
+            border-collapse: collapse;
+        }
     </style>
 </head>
 <body>
@@ -53,16 +59,24 @@
     <input type="radio" name="how_often" value="Weekly">Weekly<br>
     <input type="radio" name="how_often" value="Monthly">Monthly<br>
     <label>What would you pay for the new product?</label><br>
-    <span>$</span>
-    <span>
-        <input type="number" name="PayForNewProduct"><br>
-        <label>dollars</label>
-    </span>
-    <br>
+    <table>
+        <tr>
+            <td>$</td>
+            <td><input type="number" name="Pay$"></td>
+            <td>.</td>
+            <td><input type="number" name="PayCents"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>dollars</td>
+            <td></td>
+            <td>cents</td>
+        </tr>
+    </table>
     <label>What features would you like to see in the new product</label><br>
     <textarea cols="80" rows="7" name="features_new"></textarea><br>
     <label>please rate your leavel of agreement with the following statements.</label><br>
-    <table border="1">
+    <table class="table" border="1">
         <tr>
             <td></td>
             <th>strongly desagree</th>
@@ -79,17 +93,17 @@
         </tr>
         <tr>
             <th>our products are priced fairly</th>
-            <td><input type="radio" name="priced_fairly" value="strongly desagree"></td>
-            <td><input type="radio" name="priced_fairly" value="desagree"></td>
-            <td><input type="radio" name="priced_fairly" value="agree"></td>
-            <td><input type="radio" name="priced_fairly" value="strongly agree"></td>
+            <td><input type="radio" name="Quality" value="strongly desagree"></td>
+            <td><input type="radio" name="Quality" value="desagree"></td>
+            <td><input type="radio" name="Quality" value="agree"></td>
+            <td><input type="radio" name="Quality" value="strongly agree"></td>
         </tr>
         <tr>
             <th>our products are priced fairly</th>
-            <td><input type="radio" name="priced_fairly" value="strongly desagree"></td>
-            <td><input type="radio" name="priced_fairly" value="desagree"></td>
-            <td><input type="radio" name="priced_fairly" value="agree"></td>
-            <td><input type="radio" name="priced_fairly" value="strongly agree"></td>
+            <td><input type="radio" name="recommend" value="strongly desagree"></td>
+            <td><input type="radio" name="recommend" value="desagree"></td>
+            <td><input type="radio" name="recommend" value="agree"></td>
+            <td><input type="radio" name="recommend" value="strongly agree"></td>
         </tr>
     </table>
     <input type="submit" name="submit" value="submit">
