@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi dau ra</title>
+</head>
+<body>
+<button type="button" onclick="showMessage1();">bt1</button>
+<div id="messageDiv"></div>
+<button type="button" onclick="showMessage2();">bt2</button>
+<script>
+    function showMessage2(){
+        document.getElementById('messageDiv').innerHTML = 'bt2';
+    }
+</script>
+<button type="button" onclick="showMessage3();">bt3</button>
+<script>
+    function showMessage3(){
+        document.write('bt3');
+    }
+</script>
+<button type="button" onclick="showMessage();">bt4!</button>
+<script>
+    function showMessage(){
+        console.log('bt4');
+    }
+</script>
+</body>
+</html>
+<script>
+    function showMessage1(){
+        alert('bt1');
+    }
+</script>
