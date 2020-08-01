@@ -5,6 +5,31 @@
     <title>giải pt bậc 2</title>
 </head>
 <body>
-
+<script>
+    let coefficient_a = prompt('nhập hệ số a');
+    let coefficient_b = prompt('nhập hệ số b');
+    let coefficient_c = prompt('nhập hệ số c');
+    let delta = Math.pow(coefficient_b, 2) - 4 * coefficient_a * coefficient_c;
+    if(coefficient_a == 0){
+        if( coefficient_b == 0){
+            if(coefficient_c == 0){
+                alert('pt có vô số ngiệm');
+            }
+            else {
+                alert('pt vô nghiệm');
+            }
+        } else {
+            alert('pt có nghiệm duy nhất x = ' + ( -coefficient_c / coefficient_b ));
+        }
+    } else {
+        if(delta < 0) {
+            alert('pt vô nghiệm');
+        } else if (delta == 0){
+            alert('pt có nghiệm kép x1=x2= ' + (-coefficient_b / 2 * coefficient_a ));
+        }else {
+            alert('pt có 2 nghiệm phân biệt: x1= ' + ((-coefficient_b + Math.sqrt(delta)) / (2 * coefficient_a )) + ' x2= ' + ((-coefficient_b - Math.sqrt(delta)) / (2 * coefficient_a )));
+        }
+    }
+</script>
 </body>
 </html>

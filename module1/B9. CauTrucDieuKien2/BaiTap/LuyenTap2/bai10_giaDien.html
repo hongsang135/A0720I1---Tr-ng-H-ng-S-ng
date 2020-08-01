@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính giá điện</title>
+</head>
+<body>
+<h2>Tính tiền điện</h2>
+Chỉ số công tơ lần ghi trước(kWh) <input type="text" id="number1"><br>
+Chỉ số công tơ lần ghi này(kWh) <input type="text" id="number2"><br>
+<input type="button" value="tính tiền điện" onclick="electricityBill()">
+<div id="dislay"></div>
+<script>
+    function electricityBill(){
+        let number1 = document.getElementById("number1");
+        let number2 = document.getElementById("number2");
+        let totalIndex = number2.value - number1.value;
+        let unitPrice = 0;
+        if(number1.value < 0 || number2.value <=0 || totalIndex < 0){
+            alert('lỗi nhập chỉ số');
+        }
+        else if(totalIndex <= 50){
+            unitPrice = 1.678;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                    'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        } else if(totalIndex <= 100){
+            unitPrice = 1.734;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        } else if(totalIndex <= 200){
+            unitPrice = 2.014;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        } else if(totalIndex <= 300){
+            unitPrice = 2.536;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        } else if(totalIndex <= 400){
+            unitPrice = 2.834;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        } else {
+            unitPrice = 2.927;
+            document.getElementById("dislay").innerHTML = 'tổng chỉ số đã sử dụng: ' + totalIndex + 'kWh' + '<br>' +
+                'giá bán lẻ: ' + unitPrice + ' dong/kWh' + '<br>'+
+                'tổng hóa đơn: ' + totalIndex * unitPrice + ' dong';
+        }
+    }
+</script>
+</body>
+</html>

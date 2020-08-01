@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra tam giac</title>
+</head>
+<body>
+<script>
+    let edge_a = prompt('nhập cạnh a: ');
+    let edge_b = prompt('nhập cạnh b: ');
+    let edge_c = prompt('nhập cạnh c: ');
+    edge_a = parseFloat(edge_a);
+    edge_b = parseFloat(edge_b);
+    edge_c = parseFloat(edge_c);
+    if( edge_a < 0 || edge_b < 0 || edge_c < 0){
+        alert('3 số bạn nhập không phải là 3 cạnh tam giác');
+    }else if (((edge_a + edge_b) > edge_c) && ((edge_b + edge_c) > edge_a) && ((edge_a + edge_c) > edge_b)){
+        alert('3 số bạn nhập là 3 cạnh tam giác');
+    } else {
+        alert('3 số bạn nhập không phải là 3 cạnh tam giác');
+    }
+</script>
+</body>
+</html>

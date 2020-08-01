@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính lãi suất ngân hàng</title>
+</head>
+<body>
+nhập số tiền ban đầu(dong):<input type="text" id="money"><br>
+nhập số tháng cho vay: <input type="number" id="numberOfMonth"><br>
+lãi suất hàng tháng(%): <input type="text" id="interestRate"><br>
+<input type="button" value="tính tiền lãi" onclick="moneyOfInterest()">
+<div id="dislay"></div>
+<script>
+    function moneyOfInterest(){
+        let money = document.getElementById("money");
+        let numberOfMonth = document.getElementById("numberOfMonth");
+        let interestRate = document.getElementById("interestRate");
+        money = parseFloat(money.value);
+        numberOfMonth = parseFloat(numberOfMonth.value);
+        interestRate = parseFloat(interestRate.value);
+        let money_Interest = 0;
+        if(money < 0 || numberOfMonth < 0 || interestRate < 0){
+            alert('các giá trị không thể < 0');
+        }else {
+            money_Interest = interestRate/100 * ( money * Math.pow((1 + interestRate/100), (numberOfMonth-1)));
+            document.getElementById("dislay").innerHTML = 'tiền lãi: ' + money_Interest + " dong";
+        }
+    }
+</script>
+</body>
+</html>
