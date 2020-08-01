@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm max 3 số</title>
+</head>
+<body>
+nhập a <input type="text" id="number1"><br>
+nhập b <input type="text" id="number2"><br>
+nhập c <input type="text" id="number3">
+<input type="button" value="tìm số lớn nhất" onclick="findMax()">
+<script>
+    function findMax() {
+        let number1 = document.getElementById("number1");
+        let number2 = document.getElementById("number2");
+        let number3 = document.getElementById("number3");
+        number1 = parseFloat(number1.value);
+        number2 = parseFloat(number2.value);
+        number3 = parseFloat(number3.value);
+        if(number1 > number2){
+            if(number1 > number3){
+                alert('số lớn nhất là: '+ number1)
+            }else{
+                alert('số lớn nhất là: '+ number3)
+            }
+        }else if( number2 > number3){
+            alert('số lớn nhất là: '+ number2)
+        }else{
+            alert('số lớn nhất là: '+ number3)
+        }
+    }
+</script>
+</body>
+</html>

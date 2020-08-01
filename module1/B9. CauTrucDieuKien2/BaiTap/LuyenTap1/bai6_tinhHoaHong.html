@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính hoa hồng theo doanh số</title>
+</head>
+<body>
+Nhập doanh số bán hàng <input type="text" id="moneyOfSales">
+    <input type="button" value="Tính hoa hồng" onclick="discount()">
+<script>
+    function discount() {
+        let moneyOfSales = document.getElementById("moneyOfSales");
+        moneyOfSales = parseFloat(moneyOfSales.value);
+        let discount = 0;
+        if ( moneyOfSales <= 0){
+            alert("money Of Sales cannot be less than 0");
+        }else if ( moneyOfSales <= 200){
+            discount = 0.03 * moneyOfSales
+            alert("Discount = " + discount);
+        }else if ( moneyOfSales <= 500) {
+            discount = 0.05 * moneyOfSales
+            alert("Discount = " + discount);
+        }else if ( moneyOfSales <= 1000){
+                discount = 0.1 * moneyOfSales
+                alert("Discount = " + discount);
+        } else {
+                discount = 0.15 * moneyOfSales
+                alert("Discount = " + discount);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28208874-5feb-487f-864a-894969a9c99f" name="Default Changelist" comment="" />
+    <list default="true" id="1d81c529-5c56-4012-9ebe-6a47eb0c06b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ChuyenDoiTienTe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ChuyenDoiTienTe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ChuyenDoiTienTe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ungDungMayTinh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ungDungMayTinh.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ungDungMayTinh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bien_KieuDuLieu_ToanTu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bien_KieuDuLieu_ToanTu/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -18,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectId" id="1fBKYeCx6nkBPgoGJ6D7tCXLpV8" />
+  <component name="ProjectId" id="1fBS8rBhG7xCdPK9DlV9aTdcAiF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,6 +38,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,12 +51,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28208874-5feb-487f-864a-894969a9c99f" name="Default Changelist" comment="" />
-      <created>1595686094097</created>
+      <changelist id="1d81c529-5c56-4012-9ebe-6a47eb0c06b9" name="Default Changelist" comment="" />
+      <created>1595689835489</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595686094097</updated>
-      <workItem from="1595686095249" duration="3106000" />
+      <updated>1595689835489</updated>
+      <workItem from="1595689836582" duration="3359000" />
     </task>
     <servers />
   </component>
@@ -54,9 +64,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1595689199594">
+    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1595693741664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595689199594" />
+    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595693741664" />
   </component>
 </project>

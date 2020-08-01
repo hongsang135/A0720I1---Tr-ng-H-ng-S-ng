@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me</title>
+<style>
+    .input{
+        position:absolute
+    }
+</style>
+</head>
+<body>
+<h2>DO YOU LOVE ME</h2>
+<input type="button" id="yes" value="yes" onclick="yesAgree()">
+<input class="input" type="button" id="no" value="no" onmouseover="noAgree()">
+<script>
+    let yes = document.getElementById("yes");
+    let no = document.getElementById("no");
+    function yesAgree() {
+        alert("<3");
+    }
+    function noAgree() {
+        let x = Math.round(Math.random() * window.innerWidth);
+        let y = Math.round(Math.random() * window.innerHeight);
+        no.style.left = x + 'px';
+        no.style.top = y + 'px';
+    }
+</script>
+</body>
+</html>

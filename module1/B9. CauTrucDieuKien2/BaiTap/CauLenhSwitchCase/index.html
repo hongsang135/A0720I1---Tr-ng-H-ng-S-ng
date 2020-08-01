@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+tháng<input type="text" id="month">
+<input type="button" id="day" onclick="numberOfDay()" value="Tính số ngày">
+<div id="result"></div>
+</body>
+<script>
+    function numberOfDay() {
+        let month = document.getElementById("month");
+        month = parseFloat(month.value);
+        if( month < 1 || month > 12 || month!=parseInt(month)) {
+            alert('nhập sai');
+        } else {
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("result").innerHTML= ('tháng '+ month + " có 31 ngày");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("result").innerHTML= ('tháng '+ month + " có 30 ngày");
+                    break;
+                case 2:
+                    document.getElementById("result").innerHTML= ('tháng '+ month + " có 28 hoặc 29 ngày");
+                    break;
+            }
+        }
+
+    }
+</script>
+</html>

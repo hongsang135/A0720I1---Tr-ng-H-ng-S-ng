@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>ứng dụng máy tính</title>
+    <link rel="stylesheet" href="ungDungMayTinh.css">
+    <script src="ungDungMayTinh.js"></script>
 </head>
 <body>
-$END$
+<div id="calculator">
+    <form action="#" method="post" id="calculate">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <input type="text" value="" id="Number1">
+                </td>
+                <td>
+                    <select id="calculation">
+                        <option>+</option>
+                        <option>-</option>
+                        <option>*</option>
+                        <option>/</option>
+                    </select>
+                </td>
+                <td colspan="2">
+                    <input type="text" value="" id="Number2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="button" value="calculate" onclick="calculate()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="showResult"></div>
 </body>
 </html>

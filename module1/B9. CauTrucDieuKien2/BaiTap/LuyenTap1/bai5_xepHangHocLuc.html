@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xếp hạng học lực</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Họ và tên</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Nhập điểm tp1</td>
+        <td><input type="text" id="point1"></td>
+    </tr>
+    <tr>
+        <td>Nhập điểm tp2</td>
+        <td><input type="text" id="point2"></td>
+    </tr>
+    <tr>
+        <td>Nhập điểm GK</td>
+        <td><input type="text" id="pointMidTerm"></td>
+    </tr>
+    <tr>
+        <td>Nhập điểm CK</td>
+        <td><input type="text" id="pointEndOfTerm"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Xếp loại" onclick="rank()"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td id="pointMean"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td id="rank"></td>
+    </tr>
+</table>
+<script>
+    function rank() {
+        let point1 = document.getElementById("point1");
+        let point2 = document.getElementById("point1");
+        let pointMidTerm = document.getElementById("pointMidTerm");
+        let pointEndOfTerm = document.getElementById("pointEndOfTerm");
+        point1 = parseFloat(point1.value);
+        point2 = parseFloat(point2.value);
+        pointMidTerm = parseFloat(pointMidTerm.value);
+        pointEndOfTerm = parseFloat(pointEndOfTerm.value);
+        let pointMean = (( point1 + point2 ) / 2) * 0.2 + pointMidTerm * 0.2 + pointEndOfTerm * 0.6;
+        document.getElementById("pointMean").innerHTML = 'Điểm trung bình = ' + pointMean;
+        if(pointMean >= 8){
+            document.getElementById("rank").innerHTML = 'Xếp loại: Giỏi';
+        } else if(pointMean >= 6.5){
+            document.getElementById("rank").innerHTML = 'Xếp loại: Khá';
+        } else if(pointMean >= 5){
+            document.getElementById("rank").innerHTML = 'Xếp loại: Trung bình';
+        } else {
+            document.getElementById("rank").innerHTML = 'Xếp loại: Kém';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giải pt bậc 1</title>
+</head>
+<body>
+<script>
+    let coefficient_a = prompt('nhập hệ số a');
+    let coefficient_b = prompt('nhập hệ số b');
+    if( coefficient_a == 0){
+        if(coefficient_b == 0){
+            alert('pt có vô số ngiệm');
+        }
+        else {
+            alert('pt vô nghiệm');
+        }
+    } else {
+        alert('pt có nghiệm x = ' + ( -coefficient_b / coefficient_a ));
+    }
+</script>
+</body>
+</html>

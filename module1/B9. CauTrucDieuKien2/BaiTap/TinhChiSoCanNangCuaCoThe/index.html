@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh chi so can nang co the</title>
+</head>
+<body>
+Nhập cân nặng của bạn <input type="text" id="weight">
+Nhập chiều cao của bạn(m) <input type="text" id="height">
+                       <input type="button" value="kiểm tra" onclick="check()">
+</body>
+<script>
+    function check() {
+        let weight = document.getElementById("weight");
+        let height = document.getElementById("height");
+        weight = parseFloat(weight.value);
+        height = parseFloat(height.value);
+        let bmi = weight / ( height * height);
+        debugger;
+        if( bmi >= 30){
+            alert('Obese')
+        } else if ( bmi >= 25){
+            alert('Overweight')
+        } else if ( bmi >= 18.5){
+            alert('Normal')
+        } else {
+            alert('underweight')
+        }
+    }
+</script>
+</html>
