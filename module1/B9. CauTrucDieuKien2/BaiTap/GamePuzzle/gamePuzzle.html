@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game puzzle</title>
+    <link href="gamePuzzle.css" rel="stylesheet">
+</head>
+<body>
+    <div><img src="img/k1.jpg" id="img1" onclick="change(1)"></div>
+    <div><img src="img/k2.jpg" id="img2" onclick="change(2)"></div>
+    <div><img src="img/k3.jpg" id="img3" onclick="change(3)"></div>
+    <div><img src="img/k4.jpg" id="img4" onclick="change(4)"></div>
+    <div><img src="img/k5.jpg" id="img5" onclick="change(5)"></div>
+<script>
+    let addressImg1 = document.getElementById("img1");
+    let addressImg2 = document.getElementById("img2");
+    let addressImg3 = document.getElementById("img3");
+    let addressImg4 = document.getElementById("img4");
+    let addressImg5 = document.getElementById("img5");
+    function change(number) {
+        switch (number){
+            case 1:{
+                if(addressImg1.getAttribute("src") === "img/k1.jpg"){
+                    addressImg1.src = "img/v1.jpg";
+                } else if(addressImg1.getAttribute("src") === "img/v1.jpg"){
+                    addressImg1.src = "img/c1.jpg";
+                } else{
+                    addressImg1.src = "img/k1.jpg";
+                }
+                break;
+            }
+            case 2:{
+                if(addressImg2.getAttribute("src") === "img/k2.jpg"){
+                    addressImg2.src = "img/v2.jpg";
+                } else if(addressImg2.getAttribute("src") === "img/v2.jpg"){
+                    addressImg2.src = "img/c2.jpg";
+                } else{
+                    addressImg2.src = "img/k2.jpg";
+                }
+                break;
+            }
+            case 3:{
+                if(addressImg3.getAttribute("src") === "img/k3.jpg"){
+                    addressImg3.src = "img/v3.jpg";
+                } else if(addressImg3.getAttribute("src") === "img/v3.jpg"){
+                    addressImg3.src = "img/c3.jpg";
+                } else{
+                    addressImg3.src = "img/k3.jpg";
+                }
+                break;
+            }
+            case 4:{
+                if(addressImg4.getAttribute("src") === "img/k4.jpg"){
+                    addressImg4.src = "img/v4.jpg";
+                } else if(addressImg4.getAttribute("src") === "img/v4.jpg"){
+                    addressImg4.src = "img/c4.jpg";
+                } else{
+                    addressImg4.src = "img/k4.jpg";
+                }
+                break;
+            }
+            case 5:{
+                if(addressImg5.getAttribute("src") === "img/k5.jpg"){
+                    addressImg5.src = "img/v5.jpg";
+                } else if(addressImg5.getAttribute("src") === "img/v5.jpg"){
+                    addressImg5.src = "img/c5.jpg";
+                } else{
+                    addressImg5.src = "img/k5.jpg";
+                }
+                break;
+            }}
+            check();
+        }
+    function check() {
+        if(addressImg1.getAttribute("src") === "img/k1.jpg"
+                && addressImg2.getAttribute("src") === "img/k2.jpg"
+                && addressImg3.getAttribute("src") === "img/k3.jpg"
+                && addressImg4.getAttribute("src") === "img/k4.jpg"
+                && addressImg5.getAttribute("src") === "img/k5.jpg"){
+                alert("good");
+            }
+        if(addressImg1.getAttribute("src") === "img/v1.jpg"
+            && addressImg2.getAttribute("src") === "img/v2.jpg"
+            && addressImg3.getAttribute("src") === "img/v3.jpg"
+            && addressImg4.getAttribute("src") === "img/v4.jpg"
+            && addressImg5.getAttribute("src") === "img/v5.jpg"){
+            alert("good1");
+        }
+        if(addressImg1.getAttribute("src") === "img/c1.jpg"
+            && addressImg2.getAttribute("src") === "img/c2.jpg"
+            && addressImg3.getAttribute("src") === "img/c3.jpg"
+            && addressImg4.getAttribute("src") === "img/c4.jpg"
+            && addressImg5.getAttribute("src") === "img/c5.jpg"){
+            alert("good2");
+        }
+
+        }
+</script>
+</body>
+</html>

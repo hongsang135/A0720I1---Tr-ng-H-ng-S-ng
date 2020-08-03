@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b80091f-7a98-449e-a107-e95208612f2e" name="Default Changelist" comment="" />
+    <list default="true" id="1b80091f-7a98-449e-a107-e95208612f2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Module1_CaseStudy/Task_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1_CaseStudy/Task_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1_CaseStudy/task_1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module1_CaseStudy/~$-DN CaseStudy Furama Resort Module1_v2.0.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module1_CaseStudy/~$-DN CaseStudy Furama Resort Module1_v2.0.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595684927542</updated>
       <workItem from="1595684929879" duration="622000" />
+      <workItem from="1596464531135" duration="617000" />
     </task>
     <servers />
   </component>

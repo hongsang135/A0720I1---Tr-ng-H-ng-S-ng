@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07cc7975-2893-4f71-bfba-0e612193f626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CauLenhSwitchCase/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DoYouLoveMe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MayTinhDonGian/mayTinhDonGian.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MayTinhDonGian/mayTinhDonGian.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TinhChiSoCanNangCuaCoThe/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ThucHanh/SuKienBanPhim/suKienBanPhim.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ThucHanh/SuKienChuot/suKienChuot.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Module1_CaseStudy/Task_1.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Module1_CaseStudy/Task_1.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Module1_CaseStudy/task_1.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Module1_CaseStudy/~$-DN CaseStudy Furama Resort Module1_v2.0.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/Bien_KieuDuLieu_ToanTu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/Bien_KieuDuLieu_ToanTu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungChuyenDoiTienTe/ChuyenDoiTienTe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B7. BienKieuDuLieuToanTu/BaiTap/UngDungMayTinh/ungDungMayTinh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoYouLoveMe.html" beforeDir="false" afterPath="$PROJECT_DIR$/DoYouLoveMe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -47,6 +37,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GamePuzzle" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -59,6 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1595862530760</updated>
       <workItem from="1595862531943" duration="1333000" />
+      <workItem from="1596425085500" duration="2550000" />
+      <workItem from="1596449937945" duration="741000" />
     </task>
     <servers />
   </component>
@@ -66,9 +66,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1595863863082">
+    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1596452027967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595863863082" />
+    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596452027967" />
   </component>
 </project>
