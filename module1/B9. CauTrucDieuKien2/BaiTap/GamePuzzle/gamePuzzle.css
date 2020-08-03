@@ -1,3 +1,13 @@
 div{
     text-align: center;
 }
+.img
+{
+    border: 5px solid #e70f0f;
+    border-radius: 4px;
+    padding: 0px;
+}
+img:hover
+{
+    box-shadow: 1px 1px 1px grey;
+}

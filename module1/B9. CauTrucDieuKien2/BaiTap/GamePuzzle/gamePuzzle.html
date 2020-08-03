@@ -18,6 +18,11 @@
     let addressImg4 = document.getElementById("img4");
     let addressImg5 = document.getElementById("img5");
     function change(number) {
+        addressImg1.className = "";
+        addressImg2.className = "";
+        addressImg3.className = "";
+        addressImg4.className = "";
+        addressImg5.className = "";
         switch (number){
             case 1:{
                 if(addressImg1.getAttribute("src") === "img/k1.jpg"){
@@ -77,21 +82,33 @@
                 && addressImg3.getAttribute("src") === "img/k3.jpg"
                 && addressImg4.getAttribute("src") === "img/k4.jpg"
                 && addressImg5.getAttribute("src") === "img/k5.jpg"){
-                alert("good");
+                addressImg1.className = "img";
+                addressImg2.className = "img";
+                addressImg3.className = "img";
+                addressImg4.className = "img";
+                addressImg5.className = "img";
             }
         if(addressImg1.getAttribute("src") === "img/v1.jpg"
             && addressImg2.getAttribute("src") === "img/v2.jpg"
             && addressImg3.getAttribute("src") === "img/v3.jpg"
             && addressImg4.getAttribute("src") === "img/v4.jpg"
             && addressImg5.getAttribute("src") === "img/v5.jpg"){
-            alert("good1");
+            addressImg1.className = "img";
+            addressImg2.className = "img";
+            addressImg3.className = "img";
+            addressImg4.className = "img";
+            addressImg5.className = "img";
         }
         if(addressImg1.getAttribute("src") === "img/c1.jpg"
             && addressImg2.getAttribute("src") === "img/c2.jpg"
             && addressImg3.getAttribute("src") === "img/c3.jpg"
             && addressImg4.getAttribute("src") === "img/c4.jpg"
             && addressImg5.getAttribute("src") === "img/c5.jpg"){
-            alert("good2");
+            addressImg1.className = "img";
+            addressImg2.className = "img";
+            addressImg3.className = "img";
+            addressImg4.className = "img";
+            addressImg5.className = "img";
         }
 
         }

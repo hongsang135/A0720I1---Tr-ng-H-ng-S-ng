@@ -37,12 +37,20 @@
     </table>
 <script>
     let result = document.getElementById("result");
+    let tem = false;
     function nhap(so) {
+        if(tem){
+            if(so != '+' && so != '-' && so != '*' && so != '/'){
+                xoa();
+            }
+        }
+        tem = false;
         result.value = result.value + so ;
     }
     function calculate() {
         result.style.textAlign = "right";
         result.value = eval(result.value);
+        tem = true;
     }
     function xoa() {
         result.value = "";
