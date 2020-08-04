@@ -1,0 +1,76 @@
+.background{
+    position: relative;
+}
+.form{
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    top: 80px;
+    left: 200px;
+}
+h2{
+    color: #e4ff00;
+}
+.table{
+    color: #85ff00e6;
+}
+.TextSlogan{
+    width: 10%;
+    position: absolute;
+    top: 2px;
+    left: 300px;
+    color: #00ff66e0;
+    font-size: 16px;
+    font-style: italic ;
+    font-family: Serif;
+}
+input, select, option{
+    background-color: #5042df2b;
+}
+.menu{
+    width: 7%;
+    height: 100%;
+    float: left;
+    background-color: #0b01ff0f;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.logo{
+    display: block;
+    max-width:162px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+}
+.imgBackground{
+    /*display: block;
+    max-width:1220px;*/
+    width:  100vw;                 /*1vw = 1% width của trinhg duyệt*/
+    height:  90vh;                 /*1vw = 1% width của trinhg duyệt*/
+}
+.divOutputData{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 80px;
+    left: 600px;
+    /*background-color: red;*/
+    color: #fff700;
+}
+.tableOutput{
+    border: 1px solid #ffeb3b5e;
+    width: 450px;
+}
+.totalPay{
+    background-color: #f600ff5c;
+}
+.divDislayTotalOfMoney{
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 370px;
+    left: 600px;
+    color: black;
+
+}
