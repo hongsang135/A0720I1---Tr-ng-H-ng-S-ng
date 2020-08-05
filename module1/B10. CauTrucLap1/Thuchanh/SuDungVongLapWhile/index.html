@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>vòng lặp while</title>
 </head>
 <body>
-$END$
+<input type="button" value="bài 1" onclick="bai1()"><br>
+<input type="button" value="bài 2" onclick="bai2()">
+<script>
+    function bai1() {
+        let num = prompt('enter your number: ');
+        let total = 0;
+        while (num != -1){
+            total += parseFloat(num);
+            alert('num = ' + num);
+            num = prompt('enter your number: ');
+        }
+        alert('total = ' + total);
+    }
+    function bai2() {
+        let i = 1;
+        while (i < 100) {
+            document.write("<hr width = " + i + "%>");
+            i++;
+        }
+
+    }
+</script>
 </body>
 </html>
