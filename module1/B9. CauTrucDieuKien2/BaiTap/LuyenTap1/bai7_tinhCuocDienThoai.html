@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tính cước điện thoại</title>
 </head>
 <body>
-$END$
+<script>
+    let minute = parseInt(prompt("Nhập vào số phút gọi tháng này: "));
+    let phi = 0;
+    let tong;
+    const phicodinh = 25;
+    if (minute <= 0 || isNaN(minute)){
+        alert("Nhập vào số phút lớn hơn 0")
+    } else {
+        if (minute > 200)
+            phi = (minute - 200) * 200 + 150 * 400 + 50 * 600;
+        else if (minute > 50)
+            phi = (minute - 50) * 400 + 50 * 600;
+        else
+            phi = minute * 600;
+        tong = (0.01 * phi + phicodinh )*1000;
+    }
+    alert("Số phút gọi tháng này " + minute +" và Số tiền điện thoại tháng này là: "+ tong);
+
+</script>
 </body>
 </html>

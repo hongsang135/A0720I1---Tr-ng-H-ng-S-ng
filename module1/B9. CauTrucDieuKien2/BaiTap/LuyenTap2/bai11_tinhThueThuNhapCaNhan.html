@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tinh thue thu nhap ca nhan</title>
 </head>
 <body>
-$END$
+<script>
+    let personalIncomeTax;
+    let personalIncome = parseInt(prompt("Nhập vào thu nhập cá nhân:" , ""));
+    if (personalIncome <= 0 || isNaN(personalIncome)){
+        alert("Nhập vào lương lớn hơn 0!");
+    }else {
+        if(personalIncome>15000000)
+        {
+            personalIncomeTax= personalIncome*0.3;
+
+        }
+        else if(personalIncome>=7000000)
+        {
+            personalIncomeTax = personalIncome*0.2;
+        }
+        else
+        {
+            personalIncomeTax = personalIncome*0.1;
+        }
+        alert("Thuế thu nhập cá nhân là : "+ personalIncomeTax);
+    }
+</script>
 </body>
 </html>

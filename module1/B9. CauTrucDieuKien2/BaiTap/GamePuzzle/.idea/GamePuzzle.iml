@@ -4,9 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="BaiTap" />
-    <orderEntry type="module" module-name="B8. CauTrucDieuKien1" />
-    <orderEntry type="module" module-name="Module1_CaseStudy" />
-    <orderEntry type="module" module-name="module 1" />
   </component>
 </module>

@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>luyện tập 1</title>
 </head>
 <body>
-$END$
+<input type="button" value="bài 1" onclick="bai1()"> lặp đếm từ 1 đến 100 <br>
+<input type="button" value="bài 2" onclick="bai2()"> tăng giảm nhiệt độ <br>
+<input type="button" value="bài 3" onclick="bai3()"> 20 số trong dãy fibonaccy <br>
+<input type="button" value="bài 4" onclick="bai4()"> số đầu tiên dãy fibo chia hết cho 5 <br>
+<input type="button" value="bài 5" onclick="bai5()"> tổng 20 số đầu tiên dãy fibo <br>
+<input type="button" value="bài 6" onclick="bai6()"> tổng 30 số chia hết cho 7 đầu tiên trong dãy số tự nhiên <br>
+<input type="button" value="bài 7" onclick="bai7()"> in 1 đến 100, chia hết 3 thì in Fizz, chia hết 5 thì in Buzz <br>
+<input type="button" value="bài 8" onclick="bai8()"> game đoán số <br>
+<script>
+    function bai1() {
+        for(let i = 1 ; i<= 100; i++){
+            document.writeln(i + "  ");
+            if(i=== 99){
+                alert("finish");
+            }
+        }
+    }
+</script>
 </body>
 </html>

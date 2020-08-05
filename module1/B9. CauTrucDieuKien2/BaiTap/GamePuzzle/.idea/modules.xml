@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../B8. CauTrucDieuKien1/.idea/B8. CauTrucDieuKien1.iml" filepath="$PROJECT_DIR$/../../../B8. CauTrucDieuKien1/.idea/B8. CauTrucDieuKien1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../.idea/BaiTap.iml" filepath="$PROJECT_DIR$/../.idea/BaiTap.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/GamePuzzle.iml" filepath="$PROJECT_DIR$/.idea/GamePuzzle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../Module1_CaseStudy/.idea/Module1_CaseStudy.iml" filepath="$PROJECT_DIR$/../../../../Module1_CaseStudy/.idea/Module1_CaseStudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../.idea/module 1.iml" filepath="$PROJECT_DIR$/../../../.idea/module 1.iml" />
     </modules>
   </component>
 </project>

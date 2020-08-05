@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>các số nguyên tố đầu tiên</title>
 </head>
 <body>
-$END$
+<script>
+    let count = 0;
+    let i = 2;
+    while( count < 20) {
+            let checkSoNguyenTo = true;
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    checkSoNguyenTo = false;
+                }
+            }
+            if (checkSoNguyenTo) {
+                document.write(i + "   ");
+                count ++;
+            }
+            i++;
+        }
+
+
+</script>
 </body>
 </html>
