@@ -6,9 +6,10 @@
 </head>
 <body>
 <script>
-    let count = 0;
+    let count = parseInt(prompt("bạn muốn in bao nhiêu số: "));
     let i = 2;
-    while( count < 20) {
+    let num = 0;
+    while( num < count) {
             let checkSoNguyenTo = true;
             for (let j = 2; j < i; j++) {
                 if (i % j === 0) {
@@ -16,8 +17,8 @@
                 }
             }
             if (checkSoNguyenTo) {
-                document.write(i + "   ");
-                count ++;
+                document.write(i + "<br>");
+                num ++;
             }
             i++;
         }

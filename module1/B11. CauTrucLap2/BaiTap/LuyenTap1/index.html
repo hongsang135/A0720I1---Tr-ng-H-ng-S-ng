@@ -22,6 +22,90 @@
             }
         }
     }
+    function bai2() {
+        let temperature = prompt("nhập nhiệt độ: ");
+        while(temperature > 100){
+            temperature = prompt(" cao quá bạn ơi, nhập lại nhiệt độ: ");
+        }
+        while(temperature < 20){
+            temperature = prompt(" thấp quá bạn ơi, nhập lại nhiệt độ: ");
+        }
+    }
+    //hàm tính dãy fibonacci
+    function fibonacci(count) {
+        if (count === 0) return 0;
+        if (count === 1) return 1;
+        return (fibonacci(count - 2) + fibonacci(count - 1));
+    }
+    //bài 3
+    function bai3() {
+        let fibo= "";
+        let count = 1 ;
+        while(count <= 20){
+                fibo = fibo +"  "  + fibonacci(count);
+                count ++;
+            }
+        alert(fibo);
+        }
+    function bai4() {
+        for(let i = 1; ;i++){
+            if(fibonacci(i)% 5 === 0){
+                alert("số đầu tiên trong dãy fibo chia hết cho 5 là: " + fibonacci(i));
+                break;
+            }
+        }
+        }
+     function bai5() {
+        let total = 0;
+        for(let i = 1; i <= 20; i++){
+            total += fibonacci(i);
+        }
+        alert("tổng 20 số đầu tiên của dãy fibo là: " + total);
+     }
+     function bai6() {
+        let total = 0;
+        let num = 0;
+        let i = 0;
+        while(num < 30) {
+            if(i % 7 === 0)
+                total += i;
+                i++;
+                num ++;
+        }
+         alert("tổng 30 số chia hết cho 7 đầu tiên là: " + total);
+     }
+     function bai7() {
+        for(let i = 1; i <= 100; i++){
+            if(i % 3 === 0 && i % 7 === 0){
+                document.writeln("FizzBuzz" + "<br>");
+                continue;
+            }
+            if(i % 3 === 0){
+                document.writeln("Fizz" + "<br>");
+                continue;
+            }
+            if(i % 7 === 0){
+                document.writeln("Buzz" + "<br>");
+                continue;
+            }
+            document.writeln(i + "<br>");
+        }
+     }
+     function bai8() {
+         let numBot = parseFloat(prompt("nhập khoảng bạn muốn đoán:\nNhập cận dưới:"));
+         let numTop = parseFloat(prompt("nhập cận trên:"));
+         let numRandom = Math.round(Math.random() * (numTop - numBot) + 1);
+         let myNum = parseFloat(prompt("nhập số bạn đoán: "));
+         while(myNum != numRandom){
+             while(myNum > numRandom){
+                 myNum = parseFloat(prompt("Lớn quá bạn ơi \n Nhập bé hơn nào:"));
+             }
+             while(myNum < numRandom){
+                 myNum = parseFloat(prompt("Bé quá bạn ơi \n Nhập lớn hơn nào:"));
+             }
+         }
+         alert("chuẩn quá bạn ê, chơi xổ số được đó")
+     }
 </script>
 </body>
 </html>

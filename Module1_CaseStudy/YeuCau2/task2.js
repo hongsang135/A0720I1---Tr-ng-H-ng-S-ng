@@ -1,4 +1,3 @@
-
 let checkData = true;  //kiểm tra dữ liệu đã được nhập đủ chưa
 function menu() {
     let option = prompt("Please choose:\n1.Show Information Customer.\n2.Edit Information Customer.\n3.Show the amount to be paid after discount")
