@@ -133,19 +133,31 @@ function menu() {
 }
 function showInformation() {
     let tempName = "";
-    let tempNameValue = fullName.value;
-    tempNameValue = tempNameValue.trim().toLowerCase();
-    for(let i=0; i< tempNameValue.length; i++){
-        if(tempNameValue.charAt(i) === " " && tempNameValue.charAt(i+1) === " "){
+    fullName.value = fullName.value.trim().toLowerCase();
+    for(let i=0; i< fullName.value.length; i++){
+        if(fullName.value.charAt(i) === " " && fullName.value.charAt(i+1) === " "){
             continue;
         }
-        if( i === 0 || tempNameValue.charAt(i-1) === " "){
-            tempNameValue.charAt(i).toUpperCase();
+        if( i === 0 || fullName.value.charAt(i-1) === " "){
+            tempName += fullName.value.charAt(i).toUpperCase();
             continue;
         }
-        tempName += tempNameValue.charAt(i);
+        tempName += fullName.value.charAt(i);
     }
     fullName.value = tempName;
+    let tempAddress = "";
+    addressCustomer.value = addressCustomer.value.trim().toLowerCase();
+    for(let i=0; i< addressCustomer.value.length; i++){
+        if(addressCustomer.value.charAt(i) === " " && addressCustomer.value.charAt(i+1) === " "){
+            continue;
+        }
+        if( i === 0 || addressCustomer.value.charAt(i-1) === " "){
+            tempAddress += addressCustomer.value.charAt(i).toUpperCase();
+            continue;
+        }
+        tempAddress += addressCustomer.value.charAt(i);
+    }
+    addressCustomer.value = tempAddress;
     document.getElementById("dislayInformation").innerHTML = "<h2>Thông tin khách hàng</h2>"
             + "<table class='tableOutput'>" +
             "<tr>" + "<td>Full name</td>" + "<td>" + fullName.value + "</td>" +
