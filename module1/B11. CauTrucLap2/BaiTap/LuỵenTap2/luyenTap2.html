@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập 2</title>
+</head>
+<body>
+<input type="button" value="bài 1" onclick="bai1()"> in dãy fibo <br>
+<input type="button" value="bài 2" onclick="bai2()"> tính giai thừa <br>
+<input type="button" value="bài 3" onclick="bai3()"> in tam giác vuông <br>
+<input type="button" value="bài 4" onclick="bai4()"> in hình chữ nhật <br>
+<input type="button" value="bài 5" onclick="bai5()"> tính lãi ngân hàng <br>
+<input type="button" value="bài 6" onclick="bai6()"> in hình trái tim <br>
+<script>
+    //hàm tính dãy fibo
+    function fibonacci(num) {
+        if(num === 0) return 0;
+        if(num === 1) return 1;
+        return (fibonacci(num-2) + fibonacci(num -1));
+    }
+    //in ra day fibo
+    function bai1() {
+        let num = parseInt(prompt("bạn muốn in bao nhiêu số: "));
+        let result = "";
+        let count = 0;
+        while(count < num){
+            result += fibonacci(count) + "<br>";
+            count ++;
+        }
+        document.writeln(result);
+    }
+    // hàm tính giai thừa
+    function factorial(num) {
+        if(num === 1) return 1;
+        return (factorial(num - 1) * num);
+
+    }
+    // tính giai thua
+    function bai2() {
+        let num = parseFloat(prompt("Nhập vào số nguyên dương: "));
+        while(num <= 0 || isNaN(num) || parseInt(num) != num){
+            num = parseFloat(prompt("sai yêu cầu\nNhập vào số nguyên dương: "));
+        }
+        alert("giai thua của số vừa nhập là: " + factorial(num));
+
+    }
+    //vẽ tam giác vuông
+    function bai3() {
+        let result1 = " ";
+        let result2 = " ";
+        let result3 = " ";
+        let result4 = " ";
+        let edge = parseFloat(prompt("nhập độ dài:\n Nhập chiều ngang:"));
+        while(edge <= 1 || isNaN(edge) || parseInt(edge) != edge ){
+            edge = parseFloat(prompt("lỗi Nhập sai định dạng, cạnh là số nguyên dương:\n Nhập độ dài:"));
+        }
+        for(let n =0, i = 1; n < edge; n++, i++){
+                for(let rep = 1;rep <= i; rep++){
+                    result1 = result1 + "*";
+                }
+            result1 = result1 + "<br>";
+        }
+        document.writeln(result1 + "<br>");
+        //
+        for(let n =0, i = edge; n < edge; n++, i--){
+            for(let rep = 1;rep <= i; rep++){
+                result2 = result2 + "*";
+            }
+            result2 = result2 + "<br>";
+        }
+        document.writeln(result2 + "<br>");
+        //
+        for(let n =0, i = edge; n < edge; n++, i--){
+            for(let rep = 1;rep <= edge; rep++){
+                if(rep >= i) {
+                    result3 = result3 + "*";
+                }
+                else{
+                    result3 += "\xa0\xa0"
+                }
+            }
+            result3 = result3 + "<br>";
+        }
+        document.writeln(result3 + "<br>");
+        //
+        for(let n =0, i = 1; n < edge; n++, i++){
+            for(let rep = 1;rep <= edge; rep++){
+                if(rep >= i) {
+                    result4 = result4 + "*";
+                }
+                else{
+                    result4 += "\xa0\xa0"
+                }
+            }
+            result4 = result4 + "<br>";
+        }
+        document.writeln(result4 + "<br>");
+    }
+    //in hình chữ nhật
+    function bai4() {
+        let width = parseFloat(prompt("Nhập chiều ngang:"));
+        let height = parseFloat(prompt("Nhập chiều cao:"));
+        let result = " ";
+        while(width <= 1 || isNaN(width) || parseInt(width) != width || height <= 1 || isNaN(height) || parseInt(height) != height  ){
+            width = parseFloat(prompt("nói không với số âm, số thập phân nha bạn, dấu * k vẽ đc nửa dấu đâu mà thập phân.\nNhập lại chiều ngang:"));
+            height = parseFloat(prompt("Nhập chiều cao:"));
+        }
+        for(let n =1, i = 1; n <= height; n++, i++){
+            for(let rep = 1;rep <= width; rep++){
+                if(n === 1 || n === height) {
+                    result = result + "*";
+                }
+                else{
+                    if(rep === 1 || rep === width){
+                        result += "*";
+                    } else {
+                        result += "\xa0\xa0"
+                    }
+                }
+            }
+            result = result + "<br>";
+        }
+        document.writeln(result);
+    }
+    //hàm tính tiền lãi
+    //tính lãi ngân hàng
+    function bai5() {
+            let money = parseFloat(prompt("nhập số tiền ban đầu: "));
+            let numberOfMonth = parseFloat(prompt("nhập số tháng cho vay: "));
+            let interestRate = parseFloat(prompt("nhập lãi suất hàng tháng: "));
+            while(money <= 0 || isNaN(money) || numberOfMonth <= 0 || isNaN(numberOfMonth) || parseInt(numberOfMonth) != numberOfMonth || interestRate <= 0 || isNaN(interestRate)  ){
+                money = parseFloat(prompt("Nhập lỗi:\nnhập số tiền ban đầu: "));
+                numberOfMonth = parseFloat(prompt("nhập số tháng cho vay: "));
+                interestRate = parseFloat(prompt("nhập lãi suất hàng tháng: "));
+            }
+            let money_Interest = 0;
+            for(let i=1; i <= numberOfMonth; i++) {
+                money_Interest = interestRate/100 * ( money * Math.pow((1 + interestRate/100), (i-1)))
+                document.writeln('tiền lãi sau tháng thứ ' + i + " la: " + money_Interest + " dong" + "<br>");
+            }
+    }
+    //in trái tym
+    function bai6() {
+        let result= " ";
+        for(let i = 1; i < 8; i++) {
+            for(let j = 1; j <= 9; j++) {
+                switch (i) {
+                    case 1:
+                        if(j === 2 || j === 3 ||j === 7 || j === 8){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 2:
+                        if(j === 1 || j === 4 ||j === 6 || j === 9){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 3:
+                        if(j === 1 || j === 5 || j === 9){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 4:
+                        if(j === 2 || j === 8){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 5:
+                        if(j === 3 || j === 7){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 6:
+                        if(j === 4 || j === 6){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                    case 7:
+                        if(j === 5){
+                            result += "\xa0*";
+                        } else {
+                            result += "\xa0\xa0"
+                        }
+                        break;
+                }
+            }
+            result += "<br>";
+        }
+        document.writeln(result);
+
+    }
+</script>
+</body>
+</html>

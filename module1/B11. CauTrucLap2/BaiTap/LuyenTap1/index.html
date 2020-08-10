@@ -92,10 +92,15 @@
         }
      }
      function bai8() {
+        //nhập cận dưới
          let numBot = parseFloat(prompt("nhập khoảng bạn muốn đoán:\nNhập cận dưới:"));
+         //nhập cận trên
          let numTop = parseFloat(prompt("nhập cận trên:"));
+         //random số ngẫu nhiên
          let numRandom = Math.round(Math.random() * (numTop - numBot) + 1);
+         //số lựa chọn
          let myNum = parseFloat(prompt("nhập số bạn đoán: "));
+         //
          while(myNum != numRandom){
              while(myNum > numRandom){
                  myNum = parseFloat(prompt("Lớn quá bạn ơi \n Nhập bé hơn nào:"));
