@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Information Customer</title>
-    <link href="task2.css" rel="stylesheet">
+    <title>yêu cầu 3</title>
+    <link href="task3.css" rel="stylesheet">
 </head>
 <body>
 <!--chèn background-->
@@ -11,7 +11,7 @@
     <img src="https://cdn.pixabay.com/photo/2017/12/01/14/54/turquoise-2991021_1280.jpg" class="imgBackground">
     <!--hiển thị một menu bên trái, đè phía trên background-->
     <div id="menu" class="menu">
-        <div id="logo"> <a href="task_1.html"><img class="logo" src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png"></a> </div>
+        <div id="logo"> <a href="task3.html"><img class="logo" src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png"></a> </div>
     </div>
     <!--text slogan-->
     <div class="TextSlogan">
@@ -22,27 +22,32 @@
     <!--forms nhập thông tin-->
     <div id="form" class="form">
         <h2>Thông tin đăng ký thuê phòng</h2>
-        <form action="task2.html" method="post" id="formInfoCustomer">
+        <form action="task3.html" method="post" id="formInfoCustomer">
             <table id="tableInForm" class="table">
                 <tr>
                     <td><label>Full name</label></td>
                     <td><input type="text" id="name" name="name"><br></td>
+                    <td><div class="tdComment" id="errorName"></div></td>
                 </tr>
                 <tr>
                     <td><label>ID Card</label></td>
                     <td><input type="number" id="idCard" name="idCard"><br></td>
+                    <td><div class="tdComment" id="errorIdCard"></div></td>
                 </tr>
                 <tr>
-                    <td><label>Bithrday</label></td>
-                    <td><input type="date" id="birthday" name="birthday"><br></td>
+                    <td><label>Birthday</label></td>
+                    <td><input type="text" id="birthday" name="birthday"><br></td>
+                    <td><div class="tdComment" id="errorBirthday"></div></td>
                 </tr>
                 <tr>
                     <td><label>Email</label></td>
                     <td><input type="email" id="email" name="email"><br></td>
+                    <td><div class="tdComment" id="errorEmail"></div></td>
                 </tr>
                 <tr>
                     <td><label>Address</label></td>
                     <td><input type="text" id="address" name="address"><br></td>
+                    <td><div class="tdComment" id="errorAddress"></div></td>
                 </tr>
                 <tr>
                     <td><label> Type of Customer</label></td>
@@ -57,10 +62,12 @@
                 <tr>
                     <td><label>Amount of people</label></td>
                     <td><input type="number" id="amountOfPeople" name="amountOfPeople"><br></td>
+                    <td><div class="tdComment" id="errorAmountOfPeople"></div></td>
                 </tr>
                 <tr>
                     <td><label>Rendays</label></td>
                     <td><input type="number" id="renDays" name="renDays"><br></td>
+                    <td><div class="tdComment" id="errorRendays"></div></td>
                 </tr>
                 <tr>
                     <td><label>Type of room</label></td>
@@ -89,6 +96,6 @@
     <div id="dislayInformation" class="divOutputData"></div>
     <div id="dislayTotalOfMoney" class="divDislayTotalOfMoney"></div>
 </div>
-<script src="task2.js"></script>
+<script src="task3.js"></script>
 </body>
 </html>
