@@ -102,10 +102,9 @@
          let myNum = parseFloat(prompt("nhập số bạn đoán: "));
          //
          while(myNum != numRandom){
-             while(myNum > numRandom){
+             if(myNum > numRandom){
                  myNum = parseFloat(prompt("Lớn quá bạn ơi \n Nhập bé hơn nào:"));
-             }
-             while(myNum < numRandom){
+             }else{
                  myNum = parseFloat(prompt("Bé quá bạn ơi \n Nhập lớn hơn nào:"));
              }
          }

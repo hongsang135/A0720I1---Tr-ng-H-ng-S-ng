@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="bai 1" onclick="bai1()">Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.<br>
+<input type="button" value="bai 2" onclick="bai2()">Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.<br>
+<input type="button" value="bai 3" onclick="bai3()">Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.<br>
+<input type="button" value="bai 4" onclick="bai4()">Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.<br>
+<input type="button" value="bai 5" onclick="bai5()"> Viết chương trình đếm số nguyên âm trong một chuỗi<br>
+<input type="button" value="bai 6" onclick="bai6()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".<br>
+<input type="button" value="bai 7" onclick="bai7()">Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)<br>
+<input type="button" value="bai 8" onclick="bai8()">Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.<br>
+<input type="button" value="bai 9" onclick="bai9()">Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c<br>
+<script>
+    function bai1() {
+        let num = new Array(10);
+        let count = 0;
+        let result = "";
+        for(let i = 0; i< num.length;i++){
+            num[i] = prompt("nhap so thu " + (i+1));
+            if(num[i] >= 10){
+                count++;
+                result = result + num[i] +" ";
+            }
+        }
+        alert("có " + count + " phần tử lớn hơn hoặc bằng 10 là: " + result);
+    }
+    function bai2() {
+        let num = new Array(10);
+        let index = 0;
+        //check kiểm tra trùng giá trị phần tử k
+        let check = false;
+        for(let i = 0; i< num.length;i++) {
+            do {
+                num[i] = parseFloat(prompt("nhap so thu " + (i + 1)));
+                if (i >= 1) {
+                    for (let j = i - 1; j >= 0; j--) {
+                        if (num[j] == num[i]) {
+                            check = true;
+                            break;
+                        }
+                        check = false;
+                    }
+                }
+            }
+                while (check) ;
+        }
+        let max = num[0];
+            for(let i = 0; i< num.length;i++){
+            if(num[i] > max){
+                max = num[i];
+                index = i;
+            }
+        }
+        alert("bạn đã nhập mảng: " + num)
+        alert("phần tử có giá trị lớn nhất trong mảng là:  " + max + " có chỉ số là: " + index);
+    }
+    function bai3() {
+        let num = new Array();
+        let index = prompt("nhập số phần tử bạn muốn nhập vào mảng");
+        let total = 0;
+        for(let i =0; i<index; i++){
+            do{
+                num[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (num[i] != parseInt(num[i]));
+            total += num[i];
+        }
+        let max = num[0];
+        for(let i =0; i<index; i++){
+            if(num[i] > max){
+                max = num[i];
+            }
+        }
+        document.writeln("mảng bạn vừa nhập là: " + num + " có giá trị lớn nhất là : " + max + " Giá trị trung bình là: " + (total/index));
+
+    }
+    function bai4() {
+        let num = new Array();
+        let index = prompt("nhập số phần tử bạn muốn nhập vào mảng");
+        let total = 0;
+        for(let i =0; i<index; i++){
+            do{
+                num[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (num[i] != parseInt(num[i]));
+            total += num[i];
+        }
+        alert("mảng vừa nhập: " + num);
+        num = num.reverse();
+        alert("mang sau khi dao nguoc: " + num);
+
+    }
+    function bai5() {
+        let num = new Array();
+        let index = prompt("nhập số phần tử bạn muốn nhập vào mảng");
+        let count = 0
+        for(let i =0; i<index; i++) {
+            num[i] = parseFloat(prompt("nhập phần tử thứ " + (i + 1)));
+        }
+        for(let i =0; i<num.length; i++){
+            if(num[i] <0 && parseInt(num[i]) === num[i]){
+                count ++;
+            }
+        }
+        alert("số lượng số nguyên âm là: " + count);
+    }
+    function bai6() {
+        let num = new Array();
+        for(let i =0; i<10; i++){
+            do{
+                num[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (num[i] != parseInt(num[i]));
+        }
+        let numCheck = prompt("nhập số cần kiểm tra: ");
+        let check = false;
+        for(let i =0; i<10; i++){
+            if(num[i] == numCheck){
+                check = true;
+            }
+        }
+        if(check){
+            alert(numCheck + " is in the array");
+        }else{
+            alert(numCheck + " is not in the array");
+        }
+
+    }
+    function bai7() {
+        let num = new Array();
+        for(let i =0; i<10; i++){
+            do{
+                num[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (num[i] != parseInt(num[i]));
+        }
+        document.writeln("mang ban dau: " + num +"<br>");
+        let numCheck = prompt("nhập số cần kiểm tra: ");
+        let check = false;
+        for(let i =0; i<10; i++){
+            if(num[i] == numCheck){
+                check = true;
+            }else{
+                check = false;
+            }
+            if(check){
+                for(let j=i; j<10; j++)
+                num[j] = num[j+1];
+                if(j = 9){
+                    num[j] = 0;
+                }
+
+            }
+        }
+        document.writeln("mang sau khi duyệt: " + num +"<br>");
+    }
+    function bai8() {
+        let num = new Array();
+        for(let i =0; i<10; i++){
+            do{
+                num[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (num[i] != parseInt(num[i]));
+        }
+        num = num.sort(function (a,b) {
+            return b-a;
+        });
+        document.writeln(num);
+    }
+    function bai9() {
+        let numA = new Array();
+        let numB = new Array();
+        let numC = new Array();
+        for(let i =0; i<10; i++){
+            do{
+                numA[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (numA[i] != parseInt(numA[i]));
+        }
+        for(let i =0; i<10; i++){
+            do{
+                numB[i] = parseFloat(prompt("nhập phần tử thứ " + (i+1)));
+            }while (numB[i] != parseInt(numB[i]));
+        }
+        numC = numA.concat(numB);
+        document.writeln(numC);
+
+    }
+</script>
+</body>
+</html>

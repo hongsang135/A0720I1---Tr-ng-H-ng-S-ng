@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<script>
+    let arrayOfCaro = new Array();
+    let checkPerson = true;
+    function init() {
+        for (let i = 0; i < 5; i++) {
+            arrayOfCaro[i] = new Array();
+            for (let j = 0; j < 5; j++) {
+                arrayOfCaro[i][j] = "";
+            }
+
+        }
+    }
+    function displayCaro() {
+        let temp = "<table border=1 cellpadding = 20> ";
+        for (let i = 0; i < 5; i++) {
+            temp += "<tr>"
+            for (let j = 0; j < 5; j++) {
+                temp += "<td onclick ='changeCaro(" + i + "," + j + ")'>" + arrayOfCaro[i][j] + "</td>"
+            }
+            temp += "</tr>"
+        }
+        temp += "</table>"
+        document.write(temp);
+    }
+    function changeCaro(i, j) {
+        if (arrayOfCaro[i][j] == "X" || arrayOfCaro[i][j] == "O") {
+            alert("không biết chơi à bạn")
+        } else {
+            if (checkPerson) {
+                arrayOfCaro[i][j] = "X";
+                checkWin("X");
+                checkPerson = false;
+            } else {
+                arrayOfCaro[i][j] = "O";
+                checkWin("O");
+                checkPerson = true;
+            }
+        }
+        document.body.innerHTML = "";
+        displayCaro();
+    }
+        function checkWin(temp) {
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if ((arrayOfCaro[i][j] == temp && arrayOfCaro[i][j + 1] == temp && arrayOfCaro[i][j + 2] == temp)
+                        || (arrayOfCaro[i][j] == temp && arrayOfCaro[i + 1][j] == temp && arrayOfCaro[i + 2][j] == temp)
+                        || (arrayOfCaro[i][j] == temp && arrayOfCaro[i + 1][j + 1] == temp && arrayOfCaro[i + 2][j + 2] == temp)
+                        || (arrayOfCaro[i][j] == temp && arrayOfCaro[i + 1][j - 1] == temp && arrayOfCaro[i + 2][j - 2] == temp)) {
+                        alert(temp + " win");
+                        init();
+                        displayCaro();
+                    }
+                }
+            }
+        }
+        init();
+        displayCaro();
+</script>
+</body>
+</html>
+</body>
+</html>

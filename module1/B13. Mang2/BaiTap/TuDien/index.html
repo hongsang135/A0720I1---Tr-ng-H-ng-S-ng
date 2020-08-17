@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+english<input id="english" type="text"><input type="button" value="search" onclick="check()"><br>
+vietnamese:
+<div id="vietnamese"></div>
+<script>
+    function check() {
+        let english = ["name", "age" , "sex"];
+        let vietnamese = ["tên", "tuổi", "giới tính"];
+        let search = document.getElementById("english");
+        let check = false;
+        for(let i = 0; i< english.length; i++){
+            if(search.value == english[i]){
+                document.getElementById('vietnamese').innerHTML = vietnamese[i];
+                check = true;
+                break;
+            }
+        }
+        if(!check){
+            alert("no data");
+        }
+    }
+</script>
+</body>
+</html>

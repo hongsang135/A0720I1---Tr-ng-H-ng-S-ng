@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="bai 1" onclick="bai1()">Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng. Chú ý: Sử dụng vòng lặp for lồng nhau<br>
+<input type="button" value="bai 2" onclick="bai2()">Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"<br>
+<input type="button" value="bai 3" onclick="bai3()">Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.<br>
+<input type="button" value="bai 4" onclick="bai4()">Viết một chương trình để đếm số từ trong một chuỗi<br>
+<input type="button" value="bai 5" onclick="bai5()">Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.<br>
+<input type="button" value="bai 6" onclick="bai6()">Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )<br>
+<script>
+    function bai1() {
+        let arr = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for(let i =0; i< arr.length; i++ ){
+            document.writeln("row " + i + "<br>");
+            for(let j =0; j< arr[i].length; j++ ){
+                document.writeln(arr[i][j] + "<br>");
+            }
+        }
+
+    }
+    function bai2() {
+        let arr = [];
+        arr = prompt("nhap chuỗi của bạn");
+        let arr2 = [];
+        let i =0;
+        let j = arr.length -1;
+        while(i <= j){
+            arr2[i] = arr[j];
+            arr2[j] = arr[i];
+            i++;
+            j--;
+        }
+        alert("chuỗi sau khi đảo là: " + arr2.join(""));
+    }
+    //đếm số ký tự số trong mảng
+    function bai3() {
+        let num = new Array();
+        let index = prompt("nhập số phần tử bạn muốn nhập vào mảng");
+        let count = 0;
+        let result= " ";
+        for(let i =0; i<index; i++) {
+            do{
+                num[i] = (prompt("nhập phần tử thứ " + (i + 1)));
+            } while (num[i].length > 1);                        // bắt buộc nhập 1 ký tự
+        }
+        for(let i =0; i<num.length; i++){
+            if(!isNaN(num[i])){
+                result += num[i] + " ";
+                count ++;
+            }
+        }
+        alert("số ký tự số là: " + count + " bao gồm: " + result);
+
+    }
+    function bai4() {
+        let arr = prompt("nhập chuỗi của bạn");
+        arr = arr.trim();
+        let count = 1;
+        for(let i =0; i<arr.length; i++){
+            if(arr[i] == " " && arr[i+1] !== " "){
+                count ++;
+            }
+        }
+        if(arr.length == 0) {
+            count = 0;
+        }
+        alert("chuỗi bạn  vừa nhập có : " + count + " từ");
+
+    }
+    function bai5() {
+        let arr1 = prompt("nhập chuỗi 1: ");
+        let arr2 = prompt("nhập chuỗi 2: ");
+        let check = true;
+        if (arr1.length !== arr2.length) {
+            check = false;
+        } else {
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] != arr2[i]) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check) {
+            alert("hai chuỗi bạn vừa nhập giống nhau hoàn toàn");
+        } else {
+            alert("hai chuỗi bạn vừa nhập khác nhau ");
+        }
+    }
+    function bai6() {
+        let arr = prompt("nhập chuỗi của bạn");
+        let result = "";
+        for(let i =0; i<arr.length; i++){
+            if(arr[i] === "-"){
+                result += "_";
+            }else{
+                result += arr[i];
+            }
+        }
+        alert("chuỗi sau khi sửa : " + result);
+
+        }
+ </script>
+</body>
+</html>

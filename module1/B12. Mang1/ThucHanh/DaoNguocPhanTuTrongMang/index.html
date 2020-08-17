@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [-3,5,1,3,2,10];
+    /*arr = arr.reverse();*/
+    let first = 0;
+    let last = arr.length - 1;
+    while(first < last){
+        let temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+    }
+    document.writeln(arr);
+</script>
+</body>
+</html>

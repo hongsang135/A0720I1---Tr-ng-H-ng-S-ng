@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        textarea{
+            width: 300px;
+            height: 100px;
+        }
+    </STYLE>
+
+</head>
+<body>
+<h1>Type anthing slowly</h1>
+<textarea id="display" onkeydown="data()"></textarea>;
+<script>
+    let textArray = ["H","ả","i"," ","t","u","t","o","r"," ","đ","a","n","g"," ","r","e","v","i","e","w"," ","b","à","i"," ","n","à","y"];
+    let result="";
+    function data() {
+        let text = document.getElementById("display").value;
+        let j = text.length;
+        alert(j);
+        if(j>0) {
+            for (let i = 0; i <= j; i++) {
+                result += textArray[i];
+            }
+        }
+        document.getElementById("display").value += result;
+
+    }
+</script>
+</body>
+</html>
