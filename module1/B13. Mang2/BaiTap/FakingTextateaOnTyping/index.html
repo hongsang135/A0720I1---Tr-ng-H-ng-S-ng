@@ -13,20 +13,22 @@
 </head>
 <body>
 <h1>Type anthing slowly</h1>
-<textarea id="display" onkeydown="data()"></textarea>;
+<textarea id="display" onkeyup="data()"></textarea>;
 <script>
     let textArray = ["H","ả","i"," ","t","u","t","o","r"," ","đ","a","n","g"," ","r","e","v","i","e","w"," ","b","à","i"," ","n","à","y"];
-    let result="";
+
     function data() {
+        let result="";
         let text = document.getElementById("display").value;
         let j = text.length;
-        alert(j);
+        //alert(text.length);
         if(j>0) {
-            for (let i = 0; i <= j; i++) {
+            for (let i = 0; i < j; i++) {
                 result += textArray[i];
             }
         }
-        document.getElementById("display").value += result;
+        document.getElementById("display").value = result;
+        setTimeout("data()", 0.5);
 
     }
 </script>

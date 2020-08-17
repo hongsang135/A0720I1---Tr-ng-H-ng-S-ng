@@ -5,6 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    function footToMeter(foot) {
+        return 0.305*foot;
 
+    }
+    function meterToFoot(meter) {
+        return 3.297*meter;
+
+    }
+    let option = prompt("please choose:\n1.convert foot to meter\n2.convert meter to foot");
+    switch (option) {
+        case "1": {
+            let foot;
+            do{
+                foot = prompt("enter foot value: ");
+            }while (isNaN(foot));
+            foot = parseFloat(foot);
+            alert("value of meter after convert: " + footToMeter(foot));
+            break;
+        }
+        case "2": {
+            let meter;
+            do{
+                meter = prompt("enter meter value: ");
+            }while (isNaN(meter));
+            meter = parseFloat(meter);
+            alert("value of feet after convert: " + meterToFoot(meter));
+            break;
+        }
+        default: {
+            alert("please choose 1 OR 2");
+            break;
+        }
+    }
+</script>
 </body>
 </html>

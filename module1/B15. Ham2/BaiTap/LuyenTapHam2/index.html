@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="bai 1" onclick="bai1()">Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.<br>
+<input type="button" value="bai 2" onclick="bai2()">Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được<br>
+<input type="button" value="bai 3" onclick="bai3()">Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.<br>
+<input type="button" value="bai 4" onclick="bai4()">Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.<br>
+<input type="button" value="bai 5" onclick="bai5()"><br>
+<input type="button" value="bai 6" onclick="bai6()"><br>
+<input type="button" value="bai 7" onclick="bai7()"><br>
+<input type="button" value="bai 8" onclick="bai8()"><br>
+<input type="button" value="bai 9" onclick="bai9()"><br>
+<script>
+    //bai1
+    function calculateSquare(num) {
+        return num*num;
+    }
+    function bai1() {
+        let num;
+        do {
+            num = prompt("nhập số cần tính bình phương: ")
+        }while (isNaN(num));
+        alert("bình phương của " + num + " là: " + calculateSquare(num));
+
+    }
+    //bai2
+    function calculateArea(radius) {
+        const PI = 3.1459;
+        return PI*calculateSquare(radius);
+    }
+    function calculatePerimeter(radius) {
+        const PI = 3.1459;
+        return 2*PI*radius;
+
+    }
+    function bai2() {
+        let radius;
+        do {
+            radius = prompt("nhập bán kính hình tròn: ")
+        }while (isNaN(radius));
+        alert("chu vi của hình tròn = " + calculatePerimeter(radius) + "\ndiện tích của hình tròn = " + calculateArea(radius));
+
+    }
+    //bai3
+    //hàm tính giai thừa
+    function calculFactorials(num) {
+        if(num <=2) return num;
+        return num * calculFactorials(num-1);
+    }
+    function bai3() {
+        let num;
+        do {
+            num = parseFloat(prompt("nhập số nguyên cần tính giai thừa: "));
+        }while (!Number.isInteger(num));
+        alert("giai thừa của " + num + " = " + calculFactorials(num))
+
+    }
+    //bai4
+    function bai4() {
+        do{
+            let charact = prompt("nhập ký tự cần kiểm tra(1 lý tự thôi nha): ");
+        }while (charact.length > 1);
+        if(!isNaN(charact)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

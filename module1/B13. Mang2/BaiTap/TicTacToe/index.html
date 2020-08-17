@@ -55,8 +55,8 @@
         displayCaro();
     }
         function checkWin(temp) {
-            for (let i = 0; i < 5; i++) {
-                for (let j = 0; j < 5; j++) {
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
                     if ((arrayOfCaro[i][j] == temp && arrayOfCaro[i][j + 1] == temp && arrayOfCaro[i][j + 2] == temp)
                         || (arrayOfCaro[i][j] == temp && arrayOfCaro[i + 1][j] == temp && arrayOfCaro[i + 2][j] == temp)
                         || (arrayOfCaro[i][j] == temp && arrayOfCaro[i + 1][j + 1] == temp && arrayOfCaro[i + 2][j + 2] == temp)
