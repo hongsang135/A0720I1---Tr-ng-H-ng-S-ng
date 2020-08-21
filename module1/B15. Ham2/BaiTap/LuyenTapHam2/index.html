@@ -9,11 +9,11 @@
 <input type="button" value="bai 2" onclick="bai2()">Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được<br>
 <input type="button" value="bai 3" onclick="bai3()">Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.<br>
 <input type="button" value="bai 4" onclick="bai4()">Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.<br>
-<input type="button" value="bai 5" onclick="bai5()"><br>
-<input type="button" value="bai 6" onclick="bai6()"><br>
-<input type="button" value="bai 7" onclick="bai7()"><br>
-<input type="button" value="bai 8" onclick="bai8()"><br>
-<input type="button" value="bai 9" onclick="bai9()"><br>
+<input type="button" value="bai 5" onclick="bai5()">Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất<br>
+<input type="button" value="bai 6" onclick="bai6()">Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.<br>
+<input type="button" value="bai 7" onclick="bai7()">Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.<br>
+<input type="button" value="bai 8" onclick="bai8()">Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.<br>
+<input type="button" value="bai 9" onclick="bai9()">Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.<br>
 <script>
     //bai1
     function calculateSquare(num) {
@@ -60,17 +60,121 @@
 
     }
     //bai4
-    function bai4() {
+    function check() {
+        let charact;
         do{
-            let charact = prompt("nhập ký tự cần kiểm tra(1 lý tự thôi nha): ");
-        }while (charact.length > 1);
+            charact = prompt("nhập ký tự cần kiểm tra(1 lý tự thôi nha): ");
+        }while (charact.length !== 1);
         if(!isNaN(charact)){
             return true;
         } else {
             return false;
         }
     }
+    function bai4() {
+        alert(check());
 
+    }
+    //bai5
+    function bai5() {
+        let arrNum = [];
+        for (let i=0; i< 3; i++){
+            do{
+            arrNum[i] = parseFloat(prompt("Nhập số nguyên thứ "+ (i+1)));
+            }while(!Number.isInteger(arrNum[i]));
+        }
+        let min = arrNum[0];
+        for (let i=0; i< 3; i++){
+            if(arrNum[i] < min){
+                min = arrNum[i];
+            }
+        }
+        alert("min = " + min);
+        return 0;
+
+    }
+    //bai6
+    function check() {
+        let charact;
+            charact = prompt("nhập vào ký tự cần kiểm tra: ");
+        if(Number.isInteger(parseFloat(charact)) && parseFloat(charact)>0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function bai6() {
+        alert(check());
+    }
+    //bai7
+    function swap(arr) {
+        for (let i = 0; i < 1; i++) {
+            let temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+        return arr;
+
+    }
+    function bai7() {
+        let arrNum = [];
+        for (let i=0; i< 2; i++){
+            do{
+                arrNum[i] = parseFloat(prompt("Nhập số nguyên thứ "+ (i+1)));
+            }while(!Number.isInteger(arrNum[i]));
+        }
+        swap(arrNum);
+        alert("sau khi đổi chỗ: " + arrNum);
+    }
+    //bai8
+    function reverseArr(arr) {
+        let i= 0;
+        let j = arr.length;
+        while (i<j){
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+        return arr;
+    }
+    function bai8() {
+        let arr = new Array();
+        let count = parseInt(prompt("nhập số lượng phần tử bạn muốn nhập vào: "));
+        for(let i=0; i< count; i++){
+            arr[i] = parseInt(prompt("nhập phần tử thứ " + (i+1) + ": "));
+        }
+        alert("mảng vừa nhập vào: " + arr);
+        reverseArr(arr);
+        alert("mảng sao khi đảo ngược: " + arr);
+
+    }
+    // bài 9
+    function checkChar(arr, char) {
+        let count = 0;
+        for(let i=0; i< arr.length; i++){
+            if(arr[i] == char){
+                count++
+            }
+        }
+        if(count > 0){
+            return count;
+        }else{
+            return -1;
+        }
+
+    }
+    function bai9() {
+        let arrString = prompt("nhập chuỗi ks tự của bạn");
+        let char = prompt("nhập ký tự muốn kiểm tra");
+        let count = checkChar(arrString, char);
+        if(count>0 ){
+            alert("số lần xuất hiện là: " + count);
+        }else{
+            alert(count);
+        }
+    }
 </script>
 </body>
 </html>
