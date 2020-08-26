@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name, power, status) {
+            this.name = name;
+            this.power = power;
+            this.textMessage = [];
+            this.inbox = [];
+            this.sendMessage = [];
+            this.status = status;
+        }
+        //kiểm tra trạng thái
+        isStatus(){
+            if(this.status){
+                return true;
+            }else{
+                alert("Chưa bật thì dùng bằng niềm tin à???");
+                return  false;
+            }
+        }
+        //bật tắt điện thoại
+        onOffMobile() {
+            if (this.status) {
+                this.status = false;
+            } else {
+                this.status = true
+            }
+            this.power--;
+        }
+        //sạc pin
+        chargePower(){
+            if (this.power < 5) {
+                alert("pin yếu. Cần sạc điện thoại");
+                while (this.power <= 100) {
+                    this.power += 0.001;
+                }
+            }
+        }
+        //soạn tin nhắn
+        texting(mobile){
+            if(this.status){
+                this.chargePower();
+                let message = prompt("Nhập nội dung tin nhắn");
+                let isSend = confirm("Bạn chắc chắn muốn gửi đi???");
+                let arrSms = [mobile.name, message];
+                if(isSend){
+                    this.sendMessage.push(arrSms);
+                    mobile.inbox.push(arrSms);
+                }else{
+                    this.textMessage.push(arrSms);
+                }
+            }
+            this.power --;
+        }
+        //xem tin nhắn
+        viewInbox(){
+            if(this.status){
+                let dislay = "Bạn muốn xem:\n";
+                for(let i=0;i<this.inbox.length;i++){
+                    dislay += (i+1) + ". Từ " + this.inbox[i][0] + "\n      Nội dung: " + this.inbox[i][1];
+                }
+                let index = prompt(dislay);
+                alert(this.inbox[index-1]);
+            }
+            this.power --;
+        }
+        viewSendMessage(){
+            if(this.status){
+                let dislay = "Bạn muốn xem:\n";
+                for(let i=0;i<this.sendMessage.length;i++){
+                    dislay += (i+1) + ". Từ " + this.sendMessage[i][0] + "\n      Nội dung: " + this.sendMessage[i][1];
+                }
+                let index = prompt(dislay);
+                alert(this.sendMessage[index-1]);
+            }
+            this.power --;
+        }
+    }
+    let nokia = new Mobile("nokia", 0,true);
+    let iphone = new Mobile("iphone", 100,true);
+    nokia.texting(iphone);
+    iphone.viewInbox();
+    nokia.viewSendMessage();
+</script>
+</body>
+</html>

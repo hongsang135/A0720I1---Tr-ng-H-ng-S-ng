@@ -1,0 +1,10 @@
+img{
+    width: 4%;
+    height: 4%;
+    position: relative;
+    top: 250px;
+    left: 500px;
+}
+canvas{
+    position: absolute;
+}

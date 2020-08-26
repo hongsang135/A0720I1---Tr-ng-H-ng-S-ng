@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+    class Retangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+        getLength(){
+            return this.length;
+        }
+        getWidth(){
+            return this.width;
+        }
+        setLength(length){
+            this.length = length;
+        }
+        setWidth(width){
+            this.width = width;
+        }
+        getArea(){
+            return this.length*this.width;
+        }
+        getPerimeter(){
+            return (this.length+this.width)*2;
+        }
+    }
+    let rec = new Retangle(1000, 500);
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.fillRect(0,0,rec.length,rec.width);
+    alert("chu vi: " + rec.getPerimeter() + "  Diện tích: " + rec.getArea());
+    rec.setLength(30);
+    rec.setWidth(15);
+    alert("chu vi: " + rec.getPerimeter() + "  Diện tích: " + rec.getArea());
+</script>
+</body>
+</html>
