@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(tivi) {
+            this.tivi = tivi;
+        }
+        onOffTivi(){
+            if(this.tivi.status){
+                this.tivi.status = !this.tivi.status;
+                alert("đã tắt tivi");
+            }else{
+                this.tivi.status = !this.tivi.status;
+                alert("đã bật tivi")
+            }
+        }
+        changeChannel() {
+            if (this.tivi.status) {
+                let channel = prompt("bạn muốn chuyển đến kênh nào: ");
+                this.tivi.channelTivi(channel);
+            } else {
+                alert("tivi đang tắt, hãy bật tivi trước")
+            }
+        }
+
+        increaseSound(){
+            if(this.tivi.sound < 100){
+                this.tivi.sound ++;
+                this.tivi.soundTivi();
+            }else{
+                alert("âm lượng max, k tăng nữa")
+            }
+        }
+        decreaseSound(){
+            if(this.tivi.sound >0){
+                this.tivi.sound --;
+                this.tivi.soundTivi();
+            }else{
+                alert("âm lượng min, k giảm nữa")
+            }
+        }
+    }
+    class Tivi {
+        constructor(channel, sound, status) {
+            this.channel = channel;
+            this.sound = sound;
+            this.status = status;
+        }
+        channelTivi(channel){
+            this.channel = channel;
+            alert("đang bật kênh " + this.channel);
+        }
+        soundTivi(){
+            alert("Âm lượng " + this.sound);
+        }
+    }
+    let tivi = new Tivi(2, 50, false);
+    let remote = new Remote(tivi);
+    remote.onOffTivi();
+    remote.changeChannel();
+    remote.changeChannel();
+    remote.increaseSound();
+    remote.onOffTivi();
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "display"></div>
+<script>
+    class Caro {
+        constructor(width, height, player1, player2) {
+            this.width = width;
+            this.height = height;
+            this.player1 = player1;
+            this.player2 = player2;
+            this.arrayOfCaro = new Array(this.height);
+            this.isCheckPerson1 = true;
+        }
+
+        init() {
+            for (let i = 0; i < this.arrayOfCaro.length; i++) {
+                this.arrayOfCaro[i] = new Array(this.width);
+                for (let j = 0; j < this.height; j++) {
+                    this.arrayOfCaro[i][j] = "";
+                }
+            }
+        }
+
+        displayCaro() {
+            let temp = "<table border=1 cellpadding = 20> ";
+            for (let i = 0; i < this.height; i++) {
+                temp += "<tr>"
+                for (let j = 0; j < this.width; j++) {
+                    temp += "<td onclick ='changeCaro(" + i + "," + j + ")'>" + this.arrayOfCaro[i][j] + "</td>"
+                }
+                temp += "</tr>"
+            }
+            temp += "</table>";
+            document.write(temp);
+        }
+
+        changeCaro(x, y) {
+            if (this.arrayOfCaro[x][y] == "X" || this.arrayOfCaro[x][y] == "O") {
+                alert("Ô bạn chọn đã có người khác chọn")
+            } else {
+                if (this.isCheckPerson1) {
+                    this.arrayOfCaro[x][y] = "X";
+                    this.checkWinner("X");
+                    this.isCheckPerson1 = false;
+                } else {
+                    this.arrayOfCaro[x][y] = "O";
+                    this.checkWinner("O");
+                    this.isCheckPerson1 = true;
+                }
+                document.body.innerHTML = "";
+                this.displayCaro();
+            }
+        }
+
+        checkWinner(temp) {
+            for (let i = 0; i < this.height; i++) {
+                for (let j = 0; j < this.width - 2; j++) {
+                    if (this.arrayOfCaro[i][j] == temp && this.arrayOfCaro[i][j + 1] == temp && this.arrayOfCaro[i][j + 2] == temp) {
+                        if (temp == "O") {
+                            alert(this.player1 + " win")
+                        } else {
+                            alert(this.player2 + " win")
+                        }
+                        this.init();
+                        this.displayCaro();
+                    }
+                }
+
+            }
+            for (let i = 0; i < this.height-2; i++) {
+                for (let j = 0; j < this.width-2; j++) {
+                    if (this.arrayOfCaro[i][j] == temp && this.arrayOfCaro[i + 1][j - 1] == temp && this.arrayOfCaro[i + 2][j - 2] == temp) {
+                        if (temp == "O") {
+                            alert(this.player1 + " win")
+                        } else {
+                            alert(this.player2 + " win")
+                        }
+                        this.init();
+                        this.displayCaro();
+                    }
+                }
+
+            }
+            for (let i = 0; i < this.height-2; i++) {
+                for (let j = 0; j < this.width; j++) {
+                    if (this.arrayOfCaro[i][j] == temp && this.arrayOfCaro[i + 1][j] == temp && this.arrayOfCaro[i + 2][j] == temp) {
+                        if (temp == "O") {
+                            alert(this.player1 + " win")
+                        } else {
+                            alert(this.player2 + " win")
+                        }
+                        this.init();
+                        this.displayCaro();
+                    }
+                }
+
+            }
+            for (let i = 0; i < this.height-2; i++) {
+                for (let j = 0; j < this.width - 2; j++) {
+                    if (this.arrayOfCaro[i][j] == temp && this.arrayOfCaro[i + 1][j + 1] == temp && this.arrayOfCaro[i + 2][j + 2] == temp) {
+                        if (temp == "O") {
+                            alert(this.player1 + " win")
+                        } else {
+                            alert(this.player2 + " win")
+                        }
+                        this.init();
+                        this.displayCaro();
+                    }
+                }
+
+            }
+        }
+    }
+    let caro = new Caro(10, 10, "Hai", "Trung");
+    caro.init();
+    caro.displayCaro();
+    function changeCaro(i, j) {
+        caro.changeCaro(i, j);
+    }
+</script>
+</body>
+</html>
