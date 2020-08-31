@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="bài 1" onclick="bai1()">in dấu sao có n dòng, mỗi dòng 5 dấu<br>
+<input type="button" value="bài 2" onclick="bai2()"> Nhập vào tháng, năm bất kỳ. In ra số ngày tương  ứng với tháng, năm đó. <br>
+<input type="button" value="bài 3" onclick="bai3()"> tính s= 1+1/2+1/3+...+1/n <br>
+<input type="button" value="bài 4" onclick="bai4()"> tính S=15-1+1/2-1/3!+....+(-1)n  1/n! <br>
+<input type="button" value="bài 5" onclick="bai5()"> tính S=1+1/3!+1/5!+.....+1/(2n-1)! <br>
+<input type="button" value="bài 6" onclick="bai6()"> Tính n!!=1*3*5*.....*n(n lẻ)<br>=2*4*6*....*n(n chẵn) <br>
+<script>
+    //bai1
+    function bai1() {
+        let result = "";
+        let index = parseInt(prompt("nhập số dòng bạn muốn in: "));
+        for(let i=0; i<index;i++) {
+            for (let i = 0; i < 5; i++) {
+                result+="*"
+            }
+            result+="<br>"
+        }
+        document.write(result);
+    }
+    //bài 2
+    //hàm kiểm tra năm nhuận
+    function checkYear(year) {
+        let isLeapYear = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+        return isLeapYear;
+    }
+    function bai2() {
+        let month = 0;
+        let year = 0;
+        do {
+            year = parseInt(prompt("Nhập năm: "));
+        }while (year <= 0 || isNaN(month));
+        do {
+            month = parseInt(prompt("Nhập tháng bạn cần kiểm tra(<=12)"));
+        }while (month >12 || month <= 0 || isNaN(month));
+        
+    }
+    //bai3
+    function bai3() {
+        let result = 0;
+        let index = parseInt(prompt("nhập n:  "));
+        for(let i=1; i<=index;i++) {
+            result += (1/i);
+        }
+        alert("kết quả: " + result);
+    }
+    //bai4
+    function giaiThua(n) {
+        if(n==1){
+            return n;
+        }else {
+            return (n * giaiThua(n - 1));
+        }
+    }
+    function bai4() {
+        let result = 15;
+        let index = parseInt(prompt("nhập n:  "));
+        for(let i=1; i<=index;i++) {
+            if(i%2==0){
+                result += (1/giaiThua(i));
+            }else {
+                result -= (1/giaiThua(i));
+            }
+        }
+        alert("kết quả: " + result);
+    }
+    //bai5
+    function bai5() {
+        let result = 0;
+        let index = parseInt(prompt("nhập n:  "));
+        for(let i=1; i<=index;i++) {
+                result += (1/giaiThua(2*i-1));
+        }
+        alert("kết quả: " + result);
+    }
+    //bai 6
+    function bai6() {
+        let result = 1;
+        let index = parseInt(prompt("nhập n:  "));
+        if(index%2 == 0){
+            for(let i=2; i<=index;i+=2) {
+                result *= i;
+            }
+        }
+        if(index%2 != 0){
+            for(let i=1; i<=index;i+=2) {
+                result *= i;
+            }
+        }
+        alert("kết quả: " + result);
+    }
+</script>
+</body>
+</html>

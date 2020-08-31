@@ -6,13 +6,12 @@
     <link href="gamedriver.css" rel="stylesheet">
 </head>
 <body>
-<canvas id="myCanvas" width="1000" height="500" style="border: 1px solid"></canvas>
-<img src="up.png" id="car">
+<!--<canvas id="myCanvas" width="1000" height="500" style="border: 1px solid"></canvas>-->
+<img src="up.png" class="img" id="car" onclick="upArrowPressed()" style="position: absolute; top: 100px; left: 200px">
 <script>
     function upArrowPressed() {
         let element = document.getElementById("car");
-        element.style.top = parseInt(element.style.top) - 5 + 'px';
-        alert(element.style.top);
+        element.style.top = parseInt(element.style.top) - 50 + 'px';
     }
 
    /* function moveSelection(evt) {
@@ -34,7 +33,7 @@
     function docReady() {
         window.addEventListener('keydown', moveSelection);
     }
-    onload="docReady()"*/
+    onload=docReady()*/
 </script>
 </body>
 </html>
