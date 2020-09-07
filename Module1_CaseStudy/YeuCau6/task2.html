@@ -194,7 +194,7 @@
         if(option == listEmployee.length +1){
             displayMainMenu();
         }else if(option>listEmployee.length || option<1 || isNaN(option)){
-            displayCustomer();
+            displayMainMenu();
         }else{
             alert("name: " + listEmployee[option-1].getName() + "\n"
             + "Birthday:" + listEmployee[option-1].getBirthday() + "\n"
@@ -215,7 +215,7 @@
         if(option == listEmployee.length +1){
             displayMainMenu();
         }else if(option>listEmployee.length || option<1 || isNaN(option)){
-            displayCustomer();
+            displayMainMenu();
         }else{
             alert("Salary of "+ listEmployee[option-1].getName()+ " là: " + listEmployee[option-1].getSalary() + "$\n")
         }

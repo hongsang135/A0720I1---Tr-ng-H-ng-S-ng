@@ -228,7 +228,7 @@
         if(option == listCustomer.length +1){
             displayMainMenu();
         }else if(option>listCustomer.length || option<1 || isNaN(option)){
-            displayCustomer();
+            displayMainMenu();
         }
         alert("total pay: " + listCustomer[option-1].caculateMoneyOfRoom() + "$");
     }
