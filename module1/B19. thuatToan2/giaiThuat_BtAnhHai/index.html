@@ -11,6 +11,12 @@
 <input type="button" value="bài 4" onclick="bai4()"> tính S=15-1+1/2-1/3!+....+(-1)n  1/n! <br>
 <input type="button" value="bài 5" onclick="bai5()"> tính S=1+1/3!+1/5!+.....+1/(2n-1)! <br>
 <input type="button" value="bài 6" onclick="bai6()"> Tính n!!=1*3*5*.....*n(n lẻ)<br>=2*4*6*....*n(n chẵn) <br>
+<input type="button" value="bài 7" onclick="bai7()"> tính tổng và tích các chữ số của một số nguyên dương cho trước<br>
+<input type="button" value="bài 8" onclick="bai8()"> UCLN và BCNN <br>
+<input type="button" value="bài 9" onclick="bai9()"> xử lý chuỗi <br>
+<input type="button" value="bài 10" onclick="bai10()"> xử lý chuỗi, in mỗi từ 1 dòng, đếm số từ, hiện bảng tần số <br>
+<input type="button" value="bài 11" onclick="bai11()"> sắp xếp mảng, tìm kiếm, chèn <br>
+<input type="button" value="bài 12" onclick="bai12()"> mảng hai chiều, ma trận<br>
 <script>
     //bai1
     function bai1() {
@@ -49,7 +55,33 @@
         do {
             month = parseInt(prompt("Nhập tháng bạn cần kiểm tra(<=12)"));
         }while (month >12 || month <= 0 || isNaN(month));
-        
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:{
+                alert("tháng " + month + " năm " + year + " có 31 ngày.");
+                break;
+            }
+            case 4:
+            case 6:
+            case 9:
+            case 11:{
+                alert("tháng " + month + " năm " + year + " có 30 ngày.");
+                break;
+            }
+            case 2:{
+                if(checkYear(year)){
+                    alert("tháng " + month + " năm " + year + " có 29 ngày.");
+                }else{
+                    alert("tháng " + month + " năm " + year + " có 28 ngày.");
+                }
+                break;
+            }
+        }
     }
     //bai3
     function bai3() {
@@ -104,6 +136,271 @@
             }
         }
         alert("kết quả: " + result);
+    }
+    //bai 7
+    function bai7() {
+        let num = 0;
+        let total = 0; //tổng các chữ số
+        let area = 1; //tích các chữ số
+        do{
+            num = parseFloat(prompt("nhập số nguyên dương cần tính:"));
+        }while(num <=0 || isNaN(num) || !Number.isInteger(num));
+        let temp = num;
+        for(;temp !== 0;){
+            total += temp%10;
+            area *= temp%10;
+            temp = Math.floor(temp/10);
+        }
+        alert("tổng các chữ số = " + total + "\ntích các chữ số = " + area);
+    }
+    //bai 8
+    function bai8() {
+        let num1 = 0;
+        let num2=0;
+        let commonDivisor = [];
+        let greatestCommonDivisor = 0; //ước chung lón nhất
+        let leastCommonMultiple = 0; //bội chung nhỏ nhất
+        do{
+            num1 = parseFloat(prompt("nhập số thứ nhất:"));
+        }while(num1 <=0 || isNaN(num1) || !Number.isInteger(num1));
+        do{
+            num2 = parseFloat(prompt("nhập số thứ hai:"));
+        }while(num2 <=0 || isNaN(num2) || !Number.isInteger(num2));
+        //tính ước chung lớn nhất
+        for(let i=1, j=1; i<= num1,j<= num2; i++, j++){
+            if(num1%i === 0 && num2%j===0){
+                commonDivisor.push(i);
+            }
+        }
+        greatestCommonDivisor = commonDivisor[0];
+        for(let i=1; i< commonDivisor.length; i++){
+            if(commonDivisor[i] > greatestCommonDivisor){
+                greatestCommonDivisor = commonDivisor[i];
+            }
+        }
+        //tính bội chung nhỏ nhất
+        for(let i =1;;i++){
+            if(i%num1===0&&i%num2===0){
+                leastCommonMultiple = i;
+                break;
+            }
+        }
+        alert("ước chung lớn nhất của " + num1 + " và " + num2 + " là: " + greatestCommonDivisor + "\nbội chung nhỏ nhất của " + num1 + " và " + num2 + " là: " + leastCommonMultiple)
+    }
+    //bai 9
+    //hàm đảo ngược chuỗi
+    function reseverString(string) {
+        let newString = [];
+        for(let i=0, j = string.length-1; i<=j;i++,j--){
+            newString[i]=string[j];
+            newString[j]=string[i];
+        }
+        return newString.join("");
+    }
+    function bai9() {
+        let string = [];
+        string = prompt("nhập chuỗi của bạn");
+        //đảo ngược chuỗi
+        document.write(reseverString(string) + "<br>");
+        //in hoa
+        document.write(string.toUpperCase() + "<br>");
+        //chữ thường
+        document.write(string.toLowerCase() + "<br>");
+        //hoa thành thường, thường thành hoa
+        let result = "";
+        for(let i=0; i<string.length ; i++){
+            if(string[i] == string[i].toLowerCase()){
+                result += string[i].toUpperCase();
+            }else{
+                result += string[i].toLowerCase();
+            }
+        }
+        document.write(result + "<br>");
+
+    }
+    //bai 10
+    function inMoiTuMotDong(string) {
+        for(let i=0; i<string.length; i++){
+            document.write(string[i] + "<br>")
+        }
+    }
+    function demSoTu(string) {
+        string = string.trim();
+        let count = 1;
+        for(let i=0; i<string.length; i++){
+            if(string[i]==" "&& string[i+1] != " "){
+                count ++;
+            }
+        }
+        return count;
+    }
+    function demTanSuatXuatHien(string) {
+        let result = "<table border='1'><tr><td>từ</td><td>Số lần xuất hiện</td></tr>";
+        let mangChuaCacTu = []; //mảng chứa các tù của chuỗi
+        for(let i=0; i<string.length; i++){
+            let temp = "";       //lưu giá trị tạm thời của từ
+            while(string[i]!=" "){
+                temp += string[i];
+                if(i<string.length-1){
+                    i++
+                }else{
+                    break;
+                }
+            }
+            if(temp != ""){
+                mangChuaCacTu.push(temp);
+            }
+        }
+        for(let i=0; i< mangChuaCacTu.length; i++){
+            result += "<tr>";
+            let charact = mangChuaCacTu[i];
+            let count=1;
+            for(let j=i+1; j< mangChuaCacTu.length; j++){
+                if(mangChuaCacTu[i]==mangChuaCacTu[j]){
+                    count++;
+                    mangChuaCacTu.splice(j,1);
+                    j--;
+                }
+            }
+            result += "<td>"+ charact + "</td><td>"+ count+ "</td></tr>"
+        }
+        return  result;
+    }
+    function bai10() {
+        let string = [];
+        do{
+            string = prompt("nhập chuỗi của bạn");
+        }while(string === null || string === "")
+        menu();
+        function menu(){
+            let option = prompt("lựa chọn thao tác\n1.in mỗi từ trên 1 dòng\n2.đếm số từ\n3.hiển thị tần suất xuất hiện")
+            switch(option){
+                case "1": {
+                    inMoiTuMotDong(string);
+                    break;
+                }
+                case "2":{
+                    alert("số từ trong chuỗi là: " + demSoTu(string));
+                    menu();
+                    break;
+                }
+                case "3" :{
+                    document.write(demTanSuatXuatHien(string));
+                    break;
+                }
+                default:{
+                    menu();
+                    break;
+                }
+            }
+        }
+    }
+    //bai11
+    //hàm sắp xếp tăng dần
+    function sortArr(arr) {
+        while(true) {
+            let check = true;
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        let temp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp;
+                        check = false;
+                    }
+                }
+            }
+            if(check){
+                break;
+            }
+        }
+        return arr;
+    }
+    function bai11() {
+        let arr = [];
+        let sum =0;
+        let n = parseInt(prompt(" nhập số phần tử bạn muốn có trong chuỗi"));
+        for(let i=0; i<n; i++){
+            arr[i] = parseInt(prompt("nhập phần tử thứ " + (i+1)));
+            if(arr[i]%2!=0 && arr[i] >0){
+                sum+=arr[i];
+            }
+        }
+        // tìm k thuộc mảng k
+        let k = parseInt(prompt("nhập số muốn kiểm tra: "));
+        let check = false;
+        let index = 0;
+        for(let i=0; i<arr.length; i++){
+            if(arr[i]== k){
+                check = true;
+                index = i;
+                break;
+            }
+        }
+        document.write("mảng vừa nhập: " + arr + "<br>"
+                    + "tổng số dương lẻ: " + sum + "<br>"
+                    + "sắp xếp tăng dần: " + sortArr(arr) + "<br>");
+        if(check){
+            document.write(k + "là phần tử có chỉ số " + index + " trong mảng"+ "<br>");
+        }else {
+            document.write(k + " không có trong mảng"+ "<br>");
+        }
+        //chèn phần tử p mà mảng vẫn tăng dần
+        let p = parseInt(prompt("nhập số bạn muốn chèn: "));
+        arr.push(p);
+        document.write("mảng sau khi chèn " + p + ": " + sortArr(arr));
+    }
+    function bai12() {
+        let arr = new Array();
+        let m = parseInt(prompt("nhập số dòng: "));
+        let n = parseInt(prompt("nhập số cột: "));
+        for(let i=0; i<m;i++){
+            arr[i] = new Array();
+            for(let j=0;j<n;j++){
+                arr[i][j] = parseInt(prompt("nhập phần tử arr["+i+"]["+j+"]="));
+            }
+        }
+        //tích tích các số là bội số của 3 trên dòng đầu tiên
+        let tich = 1;
+        let check = true;
+        for(let i=0; i< arr[0].length; i++){
+            if(arr[0][i]!=0 && arr[0][i]%3==0){
+                tich *= arr[0][i];
+                check = false
+            }
+        }
+        if(check) {
+            tich = 0;
+        }
+        //mảng các phần tử lớn nhất
+        let arrMax = [];
+        for(let i=0; i<m;i++){
+            let max = arr[i][0];
+            for(let j=1;j<n;j++){
+                if(arr[i][j]>max){
+                    max = arr[i][j];
+                }
+            }
+            arrMax.push(max);
+        }
+        //in ma trận ra màn hình
+        document.write("ma trận đã nhập: " + "<br>");
+        for(let i=0; i<m;i++){
+            for(let j=0;j<n;j++){
+                document.writeln(arr[i][j]);
+            }
+            document.write("<br>");
+        }
+        //in tích các số là bội số của 3
+        document.write("tích các số là bội số của 3 trên dòng đầu tiên là:   " + tich + "<br>");
+        //in mảng các phần tử lớn nhất trên mỗi hàng
+        document.write("các phần tử lớn trên mỗi hàng là: " + arrMax + "<br>");
+        //xóa phần tử đầu tiên của arrMax và in ra
+        for (let i=0; i<arrMax.length-1; i++){
+            arrMax[i] = arrMax[i+1]
+        }
+        arrMax.length = arrMax.length -1;
+        document.write("mảng lớn nhất sau khi xóa: " + arrMax + "<br>");
     }
 </script>
 </body>

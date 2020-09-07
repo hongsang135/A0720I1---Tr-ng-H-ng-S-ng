@@ -40,17 +40,17 @@
         setGender(gender){
             this.gender = gender;
         }
-        checkApple(Apple){
-            if(Apple.weight >0 ){
+        checkApple(apple){
+            if(apple.weight >0 ){
                 return true;
             }else{
                 return false;
             }
         }
-        eat(Apple){
-            if(this.checkApple(Apple)){
-                Apple.weight --;
-                alert("táo còn " + Apple.weight)
+        eat(apple){
+            if(this.checkApple(apple)){
+                apple.weight --;
+                alert("táo còn " + apple.weight)
             }else{
                 alert("hết táo rồi");
             }
