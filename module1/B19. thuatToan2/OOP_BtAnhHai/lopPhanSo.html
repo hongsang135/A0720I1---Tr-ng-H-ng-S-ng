@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class PhanSo {
+        constructor(tuSo, mauSo) {
+            this.tuSo = tuSo;
+            this.mauSo = mauSo;
+        }
+        setTuSo(tuSo){
+            this.tuSo = tuSo;
+        }
+        getTuSo(){
+            return this.tuSo;
+        }
+        setMauSo(mauSo){
+            this.mauSo = mauSo;
+        }
+        getMauSo(){
+            return this.mauSo;
+        }
+        congPhanSo(phanSo2,ketQua){
+            ketQua.mauSo = this.mauSo * phanSo2.mauSo;
+            ketQua.tuSo = this.tuSo*phanSo2.mauSo + phanSo2.tuSo*this.mauSo;
+        }
+        truPhanSo(phanSo2,ketQua){
+            ketQua.mauSo = this.mauSo * phanSo2.mauSo;
+            ketQua.tuSo = this.tuSo*phanSo2.mauSo - phanSo2.tuSo*this.mauSo;
+        }
+        nhanPhanSo(phanSo2,ketQua){
+            ketQua.mauSo = this.mauSo * phanSo2.mauSo;
+            ketQua.tuSo = this.tuSo * phanSo2.tuSo;
+        }
+        chiaPhanSo(phanSo2,ketQua){
+            ketQua.mauSo = this.mauSo * phanSo2.tuSo;
+            ketQua.tuSo = this.tuSo*phanSo2.mauSo;
+        }
+    }
+    let phanso1 = new PhanSo(5, 10);
+    let phanso2 = new PhanSo(7,8);
+    let ketQuaCong = new PhanSo();
+    let ketQuaTru = new PhanSo();
+    let ketQuaNhan = new PhanSo();
+    let ketQuaChia = new PhanSo();
+    phanso1.congPhanSo(phanso2, ketQuaCong);
+    phanso1.truPhanSo(phanso2, ketQuaTru);
+    phanso1.nhanPhanSo(phanso2, ketQuaNhan);
+    phanso1.chiaPhanSo(phanso2, ketQuaChia);
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>câu 2</title>
+</head>
+<body>
+<script>
+    function checkNumber() {
+        let num1;
+        let num2;
+        let total1 =0; //tổng các ước của num1
+        let total2 =0; //tổng các ước của num2
+        // yêu cầu dữ liệu nhập vào là số nguyên dương
+        do{
+            num1 = parseFloat(prompt("nhập phần tử thứ nhất:"));
+        }while (num1 != parseInt(num1) || num1 <=0);
+        do{
+            num2 = parseFloat(prompt("nhập phần tử thứ nhất:"));
+        }while (num2 != parseInt(num2) || num2<=0);
+        //tính tổng ước của hai số nhập vào
+        for(let i=1; i<=(num1/2); i++){
+            if(num1%i ==0){
+                total1 += i;
+            }
+        }
+        for(let i=1; i<=(num2/2); i++){
+            if(num2%i ==0){
+                total2 += i;
+            }
+        }
+        //kiểm tra
+        if(total1==num2 && total2==num1){
+            alert("hai số đã nhập là số thân thiết");
+        }else{
+            alert("hai số đã nhập KHÔNG phải là số thân thiết");
+        }
+    }
+    checkNumber();
+</script>
+</body>
+</html>
