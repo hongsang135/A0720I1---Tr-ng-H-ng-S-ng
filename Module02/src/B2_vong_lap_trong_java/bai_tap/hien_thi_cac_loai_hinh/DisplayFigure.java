@@ -18,6 +18,7 @@ public class DisplayFigure {
                     }
                     System.out.println("");
                 }
+                break;
             }
             case 2:{
                 System.out.println("nhập chiều cao: ");
@@ -57,9 +58,29 @@ public class DisplayFigure {
                     }
                     System.out.println("");
                 }
+                break;
             }
             case 3:{
-
+                System.out.println("nhập chiều cao: ");
+                int height = scanner.nextInt();
+                for(int i =0; i<=height; i++){
+                    for(int j=0; j<=height+i;j++){
+                        if(j<height-i){
+                            System.out.print(" ");
+                        }else{
+                            System.out.print("*");
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+            }
+            case 4:{
+                break;
+            }
+            default:{
+                System.out.println("fail");
+                break;
             }
         }
     }
