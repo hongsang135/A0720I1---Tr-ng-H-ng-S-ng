@@ -1,6 +1,6 @@
 package b4_lop_va_doi_tuong_trong_java.bai_tap.xay_dung_lop_quadratic_equation;
 import java.util.Scanner;
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("enter value of a: ");
