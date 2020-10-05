@@ -8,6 +8,19 @@ public class Fan {
     private boolean on;
     private double radius;
     private String color;
+
+    public int getSLOW() {
+        return SLOW;
+    }
+
+    public int getMEDIUM() {
+        return MEDIUM;
+    }
+
+    public int getFAST() {
+        return FAST;
+    }
+
     public Fan(){
         this.speed = SLOW;
         this.on = false;
@@ -17,14 +30,8 @@ public class Fan {
     public int getSpeed(){
         return this.speed;
     }
-    public void setSpeed(String speed){
-        if(speed == "medium"){
-            this.speed = this.MEDIUM;
-        }else if(speed == "slow"){
-            this.speed = this.SLOW;
-        }else if(speed == "fast"){
-            this.speed = this.FAST;
-        }
+    public void setSpeed(int speed){
+        this.speed = speed;
     }
     public boolean getOn(){
         return this.on;
