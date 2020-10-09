@@ -23,7 +23,7 @@ public class SquareMatrix {
                 System.out.print(matrix[i][j] + "  ");
                 if(i==j){
                     sum+=matrix[i][j];
-                }
+            }
             }
             System.out.println();
         }
