@@ -1,4 +1,4 @@
-package b6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc;
+package b7_abstract_interface.bai_tap.colorable;
 
 public class Rectangle extends Shape {
     private double width = 1.0;
@@ -13,7 +13,6 @@ public class Rectangle extends Shape {
     }
 
     public Rectangle(double width, double length, String color, boolean filled) {
-        super(color, filled);
         this.width = width;
         this.length = length;
     }

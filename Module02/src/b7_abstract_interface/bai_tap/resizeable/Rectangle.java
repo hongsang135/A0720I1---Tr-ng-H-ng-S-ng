@@ -1,4 +1,4 @@
-package b6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc;
+package b7_abstract_interface.bai_tap.resizeable;
 
 public class Rectangle extends Shape {
     private double width = 1.0;
@@ -52,4 +52,9 @@ public class Rectangle extends Shape {
                 + super.toString();
     }
 
+    @Override
+    public void resize(double percent) {
+        setWidth(getWidth()*(1+percent/100));
+        setLength(getLength()*(1+percent/100));
+    }
 }

@@ -1,15 +1,8 @@
-package b6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc;
-public class Shape{
+package b7_abstract_interface.bai_tap.resizeable;
+
+public abstract class Shape implements Resizeable{
     private String color;
     private boolean filled;
-    public Shape() {
-        this.color = "green";
-        this.filled = true;
-    }
-    public Shape(String color, boolean filled) {
-        this.color = color;
-        this.filled = filled;
-    }
     public String getColor() {
         return color;
     }
@@ -22,11 +15,16 @@ public class Shape{
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
+    public abstract double getArea();
     @Override
     public String toString() {
         return "A Shape with color of "
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
+    }
+
+    @Override
+    public void resize(double percent) {
     }
 }
