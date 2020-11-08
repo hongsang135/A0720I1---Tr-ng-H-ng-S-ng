@@ -22,5 +22,6 @@ public class Count {
         for(Map.Entry<String, Integer> entry : myMap.entrySet()){
             System.out.println(entry.getKey() + " xuat hien " +entry.getValue() +" lan");
         }
+
     }
 }
