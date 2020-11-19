@@ -1,0 +1,3 @@
+name Services, area, rate, max Capacity, rent Type, id, standard Room, convenient Other, number Of Floors
+House,400,600,5,Full,SVHO-0001,Vip,massage,1
+House,500,500,3,Full,SVHO-0002,Nomal,karaoke,2

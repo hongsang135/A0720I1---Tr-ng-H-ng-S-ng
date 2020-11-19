@@ -1,0 +1,4 @@
+name Services, area, rate, max Capacity, rent Type, id, standard Room, convenient Other, area Pool, number Of Floors
+Villa,100,200,10,Full,SVVL-0001,Vip,karaoke,300,1
+Villa,200,300,15,Part,SVVL-0002,Nomal,massage,300,2
+House,400,400,15,Full,SVVL-0003,Vippp,massage,600,2
