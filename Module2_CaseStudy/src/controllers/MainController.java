@@ -5,6 +5,7 @@ import commons.Regex;
 import models.*;
 
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.jar.JarOutputStream;
 
@@ -16,6 +17,8 @@ public class MainController {
     public static ArrayList<Customer> listCustomer = new ArrayList<>();
     public static ArrayList<Customer> listBooking = new ArrayList<>();
     public static Map<String, Employee> employeeMap = new LinkedHashMap<>();
+    public static Queue<Customer> cinemaList = new LinkedList<>();
+    public static final int TICKET_MAX = 250;
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("MENU:\n" +
@@ -25,7 +28,9 @@ public class MainController {
                 "4.Show Information of Customer\n" +
                 "5.Add New Booking\n" +
                 "6.Show Information of Employee\n" +
-                "7.Exit\n");
+                "7.Show list booking cinema 4k\n" +
+                "8.Employee\n" +
+                "9.Exit\n");
         System.out.print("your option: ");
         String option = scanner.nextLine();
         switch (option) {
@@ -50,6 +55,7 @@ public class MainController {
                 break;
             }
             case "6": {
+                employeeMap = FuncFileCsv.getFileCsvEmployee();
                 for (Map.Entry<String, Employee> entry : employeeMap.entrySet()) {
                     System.out.println(entry.getKey() + " " + entry.getValue());
                 }
@@ -57,6 +63,15 @@ public class MainController {
                 break;
             }
             case "7": {
+                showListBookCinema4k();
+                break;
+            }
+            case "8": {
+                FileEmployee.employeeMap = FuncFileCsv.getFileCsvEmployee();
+                FileEmployee.displayMainMenu();
+                break;
+            }
+            case "9": {
                 System.out.println("Goodbye");
                 System.exit(0);
                 break;
@@ -461,12 +476,13 @@ public class MainController {
 
     public static void addNewBooking() {
         Scanner scanner = new Scanner(System.in);
-
+        int[] ticket = {0};
         listVilla = FuncFileCsv.getFileCsvVilla();
         listHouse = FuncFileCsv.getFileCsvHouse();
         listRoom = FuncFileCsv.getFileCsvRoom();
         listCustomer = FuncFileCsv.getFileCsvCustomer(listVilla, listHouse, listRoom);
         listBooking = FuncFileCsv.getFileBooking(listVilla, listHouse, listRoom);
+        cinemaList = FuncFileCsv.getFileCsvCustomerBookCinema(listVilla, listHouse, listRoom, ticket);
         listVilla = FuncFileCsv.getFileCsvVilla();
         System.out.println("list customer: : ");
         Collections.sort(listCustomer);
@@ -512,12 +528,46 @@ public class MainController {
                 listBooking.add(listCustomer.get(choice-1));
                 break;
             }
+            default:{
+                System.out.println("fail!!  Press Enter to continue......");
+                scanner.nextLine();
+                displayMainMenu();
+            }
         }
         FuncFileCsv.writeBooking(listBooking);
+        System.out.println("Are you buy cinema ticket??????\n1.YES\n2.NO");
+        String ticketCinema = scanner.next();
+        if(ticketCinema.equals("1")){
+            if(ticket[0] < TICKET_MAX){
+                cinemaList.add(listCustomer.get(choice-1));
+                FuncFileCsv.writeListBookingCinema(cinemaList);
+            }else{
+                System.out.println("full slot cinema.!!!!");
+            }
+
+        }else if(ticketCinema.equals("2")){
+        }else{
+            System.out.println("fail!!  Press Enter to continue......");
+            scanner.nextLine();
+            displayMainMenu();
+        }
         System.out.println("Complete!!!...Press Enter to continue......");
         scanner.nextLine();
         displayMainMenu();
     }
+
+    public static void showListBookCinema4k(){
+        int[] temp = {0};
+        listVilla = FuncFileCsv.getFileCsvVilla();
+        listHouse = FuncFileCsv.getFileCsvHouse();
+        listRoom = FuncFileCsv.getFileCsvRoom();
+        cinemaList = FuncFileCsv.getFileCsvCustomerBookCinema(listVilla, listHouse, listRoom, temp);
+        System.out.println("List customer book cinema:");
+        for(Customer customer: cinemaList){
+            System.out.println(customer.showInfor());
+        }
+        displayMainMenu();
+    };
 
     public static void main(String[] args) {
         displayMainMenu();

@@ -1,4 +1,5 @@
 Name, birthday, sex, Id card, phone number, email, type of customer, address, services use
-1,1,1,1,1,1,1,1,SVVL-0001
-quang,1212,female,156489,21313132,quang@@@,nomal,hue,SVVL-0001
-sang,11/11,male,16548,65165654,sang@gmail,vip,DâNng,SVRO-0002
+1,1,1,1,1,1,1,1,null
+Cútomer,30/02/1999,male,12345678,0123456,hongsang@ga,vip,Da,null
+quang,1212,female,156489,21313132,quang@@@,nomal,hue,null
+sang,11/11,male,16548,65165654,sang@gmail,vip,DâNng,SVRO-0001

@@ -5,10 +5,7 @@ import models.*;
 
 import java.io.*;
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FuncFileCsv {
     public static final String COMMA_DELIMITER = ",";
@@ -23,6 +20,7 @@ public class FuncFileCsv {
     public static final String FILE_HEADER_CUSTOMER = "Name, birthday, sex, Id card, phone number, email, type of customer, address, services use";
     public static final String FILE_NAME_EMPLOYEE = "src/data/Employee.csv";
     public static final String FILE_NAME_BOOKING = "src/data/booking.csv";
+    public static final String FILE_NAME_BOOKING_CINEMA = "src/data/booking_cinema.csv";
 
 
     public static void villaWriteToFileCsv(ArrayList<Villa> villaArrayList) {
@@ -470,6 +468,91 @@ public class FuncFileCsv {
             }
         }
         return listBooking;
+    }
+
+    public static void writeListBookingCinema(Queue<Customer> bookingListCinema){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(FILE_NAME_BOOKING_CINEMA);
+            for (Customer customer : bookingListCinema) {
+                fileWriter.append(customer.showInfor());
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error in Csv file write !!!");
+        } finally {
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (Exception ex) {
+                System.out.println("Error when flush or close");
+            }
+        }
+    }
+
+    public static Queue<Customer> getFileCsvCustomerBookCinema(List<Villa> villaList, List<House> houseList, List<Room> roomList, int ticket[]) {
+        BufferedReader br = null;
+        Queue<Customer> listBookCinema = new LinkedList<>();
+        ticket[0] = 0;
+        try {
+            String line;
+            br = new BufferedReader(new FileReader(FILE_NAME_BOOKING_CINEMA));
+
+            while ((line = br.readLine()) != null) {
+                ticket[0]++;
+                String[] splitData = line.split(",");
+                if (splitData[0].equals("Name")) {
+                    continue;
+                }
+                Customer customer = new Customer();
+                customer.setName(splitData[0]);
+                customer.setBirthday(splitData[1]);
+                customer.setSex(splitData[2]);
+                customer.setIdCard(splitData[3]);
+                customer.setPhoneNumber(splitData[4]);
+                customer.setEmail(splitData[5]);
+                customer.setTypeCustomer(splitData[6]);
+                customer.setAddress(splitData[7]);
+                if(!splitData[8].equals("null")) {
+                    String serviceID = splitData[8];
+                    if (serviceID.substring(0, 4).equals("SVVL")) {
+                        for (Services services : villaList) {
+                            if (services.getId().equals(serviceID)) {
+                                customer.setServicesUse(services);
+                                //listCustomer.add(customer);
+                                //break;
+                            }
+                        }
+                    } else if (serviceID.substring(0, 4).equals("SVHO")) {
+                        for (Services services : houseList) {
+                            if (services.getId().equals(serviceID)) {
+                                customer.setServicesUse(services);
+                                //listCustomer.add(customer);
+                                //break;
+                            }
+                        }
+                    } else if (serviceID.substring(0, 4).equals("SVRO")) {
+                        for (Services services : roomList) {
+                            if (services.getId().equals(serviceID)) {
+                                customer.setServicesUse(services);
+                                //listCustomer.add(customer);
+                                //break;
+                            }
+                        }
+                    }
+                }
+                listBookCinema.add(customer);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                br.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return listBookCinema;
     }
 
 }
