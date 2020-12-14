@@ -1,0 +1,31 @@
+/*p{*/
+/*    !*thụt lề văn bản*!*/
+/*    text-indent: 50px;*/
+/*    !*căn lề 2 bên*!*/
+/*    text-align: justify;*/
+/*    !*khoảng cách ký tự*!*/
+/*    !*letter-spacing: 3px;*!*/
+/*    !*chiều cao dòng line-hight*!*/
+/*    !*hướng văn bản*!*/
+/*    direction: ltr;*/
+/*    !*khoảng cách từ word-spacing*!*/
+/*}*/
+/*a{*/
+/*    text-decoration: none;*/
+/*}*/
+div{
+    text-indent: 40px;
+    width: 800px;
+    text-align: justify;
+    font-size: 18px;
+}
+hr{
+    margin-left: 0;
+    width: 800px;
+}
+span{
+    color: blue;
+}
+b.a{
+    color: dodgerblue;
+}
