@@ -18,11 +18,14 @@ left join dichVuDiKem on hopDongChiTiet.idDichVuDiKem = dichVuDiKem.idDichVuDiKe
 -- yeu cau 6: Hiển thị IDDichVu, TenDichVu, DienTich, ChiPhiThue,
 -- TenLoaiDichVu của tất cả các loại Dịch vụ chưa từng được Khách hàng
 -- thực hiện đặt từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).
-SELECT dichVu.IDDichVu, dichVu.TenDichVu, dichVu.DienTich, dichVu.ChiPhiThue, quy1.ngayLamHopDong, loaiDichVu.idLoaiDichVu
-from dichVu inner join (select * from hopdong where hopdong.ngayLamHopDong between '2019-01-01' and '2019-03-31') as quy1
-on quy1.idDichvu = dichVu.idDichVu
+SELECT dichVu.IDDichVu, dichVu.TenDichVu, dichVu.DienTich, dichVu.ChiPhiThue, loaidichvu.idLoaiDichVu
+from dichVu
 left join loaidichvu on dichvu.idLoaiDichVu = loaiDichVu.idLoaiDichVu
-having quy1.ngayLamHopDong is null;
+where 
+	not dichvu.idDichVu in(
+		select hopDong.idDichVu
+        from hopdong
+	);
 
 -- 7....Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa,
 -- ChiPhiThue, TenLoaiDichVu của tất cả các loại dịch vụ đã từng được
