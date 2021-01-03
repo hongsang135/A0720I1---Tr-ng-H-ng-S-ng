@@ -1,0 +1,8 @@
+img {
+    width: 100%;
+    height: auto;
+}
+.padding-img{
+    padding-left: 5px;
+    padding-right: 5px;
+}
