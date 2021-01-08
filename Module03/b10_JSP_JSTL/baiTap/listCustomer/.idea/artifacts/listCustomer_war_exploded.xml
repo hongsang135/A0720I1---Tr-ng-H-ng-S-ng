@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="listCustomer:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/listCustomer_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="listCustomer/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="listCustomer" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/jstl/jstl-1.2.jar" />
+          <element id="file-copy" path="D:/jstl/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="D:/jstl/commons-io-2.8.0.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
